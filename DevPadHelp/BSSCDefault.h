@@ -1,0 +1,16 @@
+#define 1	1
+#define 2	2
+#define 3	3
+#define 4	4
+#define 5	5
+#define 6	6
+#define 7	7
+#define 8	8
+#define 9	9
+#define 10	10
+#define 11	11
+#define 12	12
+#define 13	13
+#define 14	14
+#define 15	15
+#define 16	16

@@ -1,0 +1,5 @@
+<!--#include virtual="/bin/header.inc"-->
+<%
+
+%>
+<!--#include virtual="/bin/footer.inc"-->

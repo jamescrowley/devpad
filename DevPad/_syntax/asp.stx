@@ -1,0 +1,238 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = ASP
+FilterName = ASP Files
+Filter = *.asp
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 1
+AutoCase = 1
+IndentAuto = 1
+IndentDel = 1
+IndentValue = {4}
+IndentValueHTML = {2}
+IndentWithTab = 1
+IndentAfter = 
+OutdentAfter = 
+ColourByLine = 1
+Operators = 
+String = "
+StringEsc = 
+StringEncoded = ""
+SingleComment = '
+SingleCommentAlt = 
+SingleCommentEsc = 
+CommentStart = 
+CommentEnd = 
+SyntaxStart = <%
+SyntaxEnd = %>
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9,\44,),(
+CommentColour = &H8000
+KeywordColour = &H7F0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &H0
+HTMLCommentColour = &H7F7F7F
+HTMLTagColour = &HBF0000
+HTMLExTagColour = &H80FF
+HTMLScriptColour = &H80
+
+[ProcedureStarts]
+
+Sub
+Function
+Property
+<head>
+<title>
+<body>
+
+
+[Keywords]
+
+#Const
+#Else
+#ElseIf
+#End
+#If
+Access
+AddressOf
+Alias
+And
+As
+Attribute
+Base
+Binary
+Boolean
+ByRef
+Byte
+ByVal
+Call
+CallByName
+Case
+CBool
+CByte
+CCur
+CDate
+CDbl
+CDec
+CInt
+CLng
+Close
+Compare
+Comparison
+Const
+CSng
+CStr
+Currency
+CVar
+CVErr
+Date
+Decimal
+Declare
+DefBool
+DefByte
+DefCur
+DefDate
+DefDbl
+DefDec
+DefInt
+DefLng
+DefObj
+DefSng
+DefStr
+DefVar
+Dim
+Do
+Double
+Each
+Else
+ElseIf
+Empty
+End
+Enum
+Eqv
+Erase
+Error
+Error
+Event
+Exit
+Explicit
+Filter
+False
+For
+Format$
+FormatCurrency
+FormatDateTime
+FormatNumber
+FormatPercent
+FreeFile
+Friend
+Function
+Get
+Get
+GetAutoServerSettings
+Global
+GoSub
+GoTo
+If
+IIf
+IMEStatus
+Imp
+Implements
+In
+In
+Input
+InStrRev
+Integer
+Is
+Join
+LBound
+Left$
+Let
+Let
+Lib
+Like
+Line
+LoadPicture
+LoadResData
+LoadResPicture
+LoadResString
+Lock
+Long
+Loop
+LSet
+Math
+Mid$
+MidB
+Mod
+MonthName
+Name
+New
+Next
+Not
+Nothing
+Null
+Object
+On
+Open
+Option
+Optional
+Or
+Output
+ParamArray
+Partition
+Preserve
+Print
+Private
+Property
+Public
+Put
+RaiseEvent
+Random
+Read
+ReDim
+Replace
+Resume
+Return
+Right$
+Round
+RSet
+SavePicture
+Seek
+Select
+Set
+Set
+Single
+Spc
+Split
+Static
+Step
+Stop
+Str$
+String
+String$
+StrReverse
+Sub
+Tab
+Then
+To
+Trim$
+True
+Type
+UBound
+Unlock
+Until
+Variant
+WeekdayName
+Wend
+While
+With
+WithEvents
+Write
+Xor
+Class

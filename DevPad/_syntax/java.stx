@@ -1,0 +1,145 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = Java
+FilterName = Java Files
+Filter = *.java
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 0
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+IndentAfter = {
+OutdentAfter = {
+ColourByLine = 1
+Operators = ;()+&|
+String = "
+StringEsc = \
+StringEncoded = \"
+SingleComment = //
+SingleCommentAlt = 
+SingleCommentEsc = \
+CommentStart = /*
+CommentEnd = */
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9,\44,;
+CommentColour = &H8000
+KeywordColour = &H7F0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &H0
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+long
+boolean
+byte
+
+
+[Keywords]
+
+abstract
+boolean
+break
+byte
+case
+catch
+char
+class
+const
+continue
+default
+delete
+do
+double
+else
+extends
+false
+final
+finally
+float
+for
+function
+goto
+if
+implements
+import
+in
+instanceof
+int
+interface
+long
+native
+new
+null
+package
+private
+protected
+public
+return
+short
+static
+super
+switch
+synchronized
+this
+throw
+throws
+transient
+true
+try
+typeof
+var
+void
+while
+withAnchoranchors
+Applet
+applets
+Area
+Array
+Button
+Checkbox
+Date
+document
+FileUpload
+Form
+forms
+Frame
+frames
+Hidden
+history
+Image
+images
+Link
+links
+Area
+location
+Math
+MimeType
+mimeTypes
+navigator
+options
+Password
+Plugin
+plugins
+Radio
+Reset
+Select
+String
+Submit
+Text
+Textarea
+window

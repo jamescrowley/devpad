@@ -1,0 +1,136 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = Modula-2
+FilterName = Modula-2 Files
+Filter = *.mod;*.def
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 0
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 1
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+ColourByLine = 0
+Operators = 
+String = "
+StringEsc = \
+SingleComment = 
+SingleCommentAlt = 
+SingleCommentEsc = 
+CommentStart = (*
+CommentEnd = *)
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \44,{,},[,],=,",_,.,\13,\10,\32,\9
+CommentColour = &H6000
+KeywordColour = &H7F0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &H91
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+
+
+[Keywords]
+
+ABS
+AND
+ARRAY
+BEGIN
+BITSET
+BOOLEAN
+BY
+CAP
+CARDINAL
+CASE
+CHAR
+CHR
+CONST
+DEC
+DEFINITION
+DISPOSE
+DIV
+DO
+ELSE
+ELSIF
+END
+EXCL
+EXIT
+EXPORT
+FALSE
+FAR
+FLOAT
+FOR
+FROM
+HALT
+HIGH
+IF
+IMPLEMENTATION
+IMPORT
+IN
+INC
+INCL
+INTEGER
+IS
+LONG
+LONGCARD
+LONGFLOAT
+LONGINT
+LONGNIL
+LONGREAL
+LONGTRUNC
+LOOP
+MAX
+MIN
+MOD
+MODULE
+NEAR
+NEW
+NIL
+NOT
+ODD
+OF
+OR
+ORD
+POINTER
+PROC
+PROCEDURE
+QUALIFIED
+REAL
+RECORD
+REPEAT
+RETURN
+SET
+SHL
+SHORT
+SHORTCARD
+SHORTFLOAT
+SHORTINT
+SHORTNIL
+SHORTREAL
+SHORTTRUNC
+SHR
+SIZE
+THEN
+TO
+TRUE
+TRUNC
+TYPE
+UNTIL
+VAL
+VAR
+WHILE
+WITH
+XOR

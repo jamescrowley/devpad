@@ -1,0 +1,38 @@
+;Developers Pad Syntax File
+;Comment text with ; symbol
+;1=True,0=False
+[Main]
+Version=1
+Name=HTML
+FilterName=HTML Files
+Filter=*.htm;*.html;*.inc;*.shtm;*.shtml;*.xml;*.xms;*.wml
+
+[Options]
+FileCode = 1
+FileType = 1
+IndentAuto = 1
+IndentDel = 1
+IndentValue = {2}
+IndentWithTab = 1
+ColourByLine = 0
+Operators =
+String = "
+StringAlt = '
+
+[KeywordOptions]
+
+;Colours used...
+HTMLCommentColour=&H7F7F7F
+TextColour=&H0
+HTMLTagColour=&HBF0000
+HTMLScriptColour=&H80
+
+[ProcedureStarts]
+;text that signifies procedure
+;name of procedure must appear after this text
+;used for procedure list
+<head
+<title>
+<body
+<h1
+<style>

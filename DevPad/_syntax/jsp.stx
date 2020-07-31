@@ -1,0 +1,147 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = JSP
+FilterName = JSP Files
+Filter = *.jsp
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 0
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 1
+IndentValue = {Tab}
+IndentValueHTML = {2}
+IndentWithTab = 1
+IndentAfter = {
+OutdentAfter = }
+ColourByLine = 1
+Operators = 
+String = "
+StringEsc = 
+StringEncoded = \"
+SingleComment = '
+SingleCommentAlt = 
+SingleCommentEsc = 
+CommentStart = /*
+CommentEnd = */
+SyntaxStart = <%
+SyntaxEnd = %>
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9,\44
+CommentColour = &H8000
+KeywordColour = &H7F0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &H0
+HTMLCommentColour = &H7F7F7F
+HTMLTagColour = &HBF0000
+HTMLExTagColour = &H80FF
+HTMLScriptColour = &H80
+
+[ProcedureStarts]
+
+function
+<head>
+<title>
+<body>
+
+
+[Keywords]
+
+abstract
+Applet
+applets
+Area
+Area
+Array
+boolean
+break
+Button
+byte
+byvalue
+case
+catch
+char
+Checkbox
+class
+const
+continue
+Date
+default
+delete
+do
+document
+double
+else
+extends
+FileUpload
+false
+final
+finally
+float
+for
+Form
+forms
+Frame
+frames
+function
+goto
+hashtable
+Hidden
+history
+if
+image
+images
+implements
+import
+in
+instanceof
+int
+interface
+Link
+links
+location
+long
+Math
+MimeType
+mimeTypes
+native
+navigator
+new
+null
+options
+package
+Password
+Plugin
+plugins
+private
+protected
+public
+Radio
+Reset
+return
+Select
+short
+static
+String
+string
+Submit
+super
+switch
+this
+throw
+throws
+transient
+true
+try
+typeof
+url
+var
+void
+while
+window
+with

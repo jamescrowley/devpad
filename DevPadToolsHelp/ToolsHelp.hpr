@@ -1,0 +1,16 @@
+[PreSingleSource]
+Html Help Project=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\DevPadHelp.hhp
+Table Of Content=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\DevPadHelp.hhc
+Index=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\DevPadHelp_merged$.hhk
+See Also Index=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\DevPadHelp.hha
+Browse Sequence=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\DevPadHelp.brs
+Topic Properties=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\DevPadHelp.trs
+Active Folders=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\DevPadHelp.trf
+Baggage Files=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\DevPadHelp.trb
+Default Topic=D:\Program Files\RoboHELP Office\RoboHTML\DevPadHelp\Overview.htm
+Build Tags=
+Build Expression=
+[SS Settings: RoboHtml For OracleHelp]
+WindowType0=2701;TRUE;MainWindow;;;;;;;;;;
+[Target:JavaHelp]
+ResultFileName=JavaHelp\DevPadHelp.hs

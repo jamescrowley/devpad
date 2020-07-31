@@ -1,0 +1,37 @@
+[OPTIONS]
+Compiled File=ToolsHelp.chm
+Title=Developers Pad Tools Help
+Contents File=DevPadHelp.hhc
+Index File=DevPadHelp.hhk
+Default topic=Overview.htm
+Default Window=MainWindow
+Error log file=
+Display compile progress=Yes
+Display compile notes=Yes
+Full-text search=No
+Binary Index=No
+Auto Index=No
+Enhanced decompilation=No
+Binary TOC=No
+Flat=No
+
+[WINDOWS]
+MainWindow="Developers Pad Tools Help","DevPadHelp.hhc","DevPadHelp.hhk","","",,,,,0x60120,18,0x200e,[401,76,877,562],0x0,0x0,,0,0,0
+
+[FILES]
+Tools\COM_Information.htm
+Tools\Class_Spy.htm
+Overview.htm
+Tools\DLL_Base_Address_Generator.htm
+
+ToolsHelp.brs
+[ALIAS]
+#include ToolsHelp.ali
+
+[MAP]
+#include BSSCDefault.h
+
+[TEXT POPUPS]
+BSSCDefault.h
+
+

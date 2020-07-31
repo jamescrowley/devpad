@@ -1,0 +1,148 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = CSharp
+FilterName = C# Files
+Filter = *.cs
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 0
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+IndentAfter = {
+OutdentAfter = }
+ColourByLine = 1
+Operators = 
+String = "
+StringEsc = \
+StringEncoded = \"
+SingleComment = //
+SingleCommentAlt = 
+SingleCommentEsc = \
+CommentStart = /*
+CommentEnd = */
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9,\44,(,),.
+CommentColour = &H8000
+KeywordColour = &HFF0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &H0
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+public
+private
+
+
+[Keywords]
+
+#define
+#elif
+#else
+#endif
+#error
+#if
+#ifdef
+#ifndef
+#include
+#line
+#pragma
+#undef
+asm
+auto
+break
+case
+catch
+cdecl
+char
+class
+const
+continue
+default
+delete
+do
+double
+elif
+else
+enum
+extern
+false
+far
+float
+for
+friend
+goto
+huge
+if
+inline
+int
+interrupt
+long
+near
+new
+null
+operator
+pascal
+private
+protected
+public
+register
+return
+short
+signed
+sizeof
+static
+struct
+switch
+template
+this
+throw
+true
+try
+typedef
+union
+unsigned
+virtual
+void
+volatile
+warn
+while
+yield
+main
+explicit
+bool
+mutable
+thread
+namespace
+noreturn
+typeid
+typename
+const_cast
+reinterpret_cast
+using
+uuid
+dllexport
+dllimport
+static_cast
+wmain
+dynamic_cast
+type_def
+interface
+override
+protected
+object
+base

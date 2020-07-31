@@ -1,0 +1,174 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = VRML
+FilterName = VRML Files
+Filter = *.wrl
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 0
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+IndentAfter = {
+OutdentAfter = }
+ColourByLine = 0
+Operators = 
+String = "
+StringEsc = \
+StringEncoded = \"
+SingleComment = #
+SingleCommentAlt = 
+SingleCommentEsc = \
+CommentStart = 
+CommentEnd = 
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \44,{,},[,],=,",_,.,\13,\10,\32,\9
+CommentColour = &H6000
+KeywordColour = &H7F0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &H91
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+
+
+[Keywords]
+
+Transform
+SpotLight
+Shape
+Text
+Sphere
+Box
+Cone
+Cylinder
+ImageTexture
+Appearance
+Material
+TextureTransform
+Background
+Group
+FontStyle
+Viewpoint
+Sound
+TimeSensor
+DirectionalLight
+Inline
+NavigationInfo
+Fog
+Collision
+VisibilitySensor
+PositionInterpolator
+OrientationInterpolator
+PositionInterpolator
+Switch
+Script
+ProximitySensor
+ImageTexture
+Billboard
+PointLight
+IndexedFaceSet
+Coordinate
+TouchSensor
+TimeSensor
+SphereSensor
+CylinderSensor
+PlaneSensor
+ProximitySensor
+ScalarInterpolator
+ColorInterpolator
+PositionInterpolator
+OrientationInterpolator
+Extrusion
+WorldInfo
+AudioClip
+Anchor
+LOD
+ElevationGrid
+IndexedLineSet
+PointSet
+Color
+Normal
+TextureCoordinate
+MovieTexture
+PixelTexture
+CoordinateInterpolator
+NormalInterpolator
+
+[KeywordsAlt]
+
+Transform
+SpotLight
+Shape
+Text
+Sphere
+Box
+Cone
+Cylinder
+ImageTexture
+Appearance
+Material
+TextureTransform
+Background
+Group
+FontStyle
+Viewpoint
+Sound
+TimeSensor
+DirectionalLight
+Inline
+NavigationInfo
+Fog
+Collision
+VisibilitySensor
+PositionInterpolator
+OrientationInterpolator
+PositionInterpolator
+Switch
+Script
+ProximitySensor
+ImageTexture
+Billboard
+PointLight
+IndexedFaceSet
+Coordinate
+TouchSensor
+TimeSensor
+SphereSensor
+CylinderSensor
+PlaneSensor
+ProximitySensor
+ScalarInterpolator
+ColorInterpolator
+PositionInterpolator
+OrientationInterpolator
+Extrusion
+WorldInfo
+AudioClip
+Anchor
+LOD
+ElevationGrid
+IndexedLineSet
+PointSet
+Color
+Normal
+TextureCoordinate
+MovieTexture
+PixelTexture
+CoordinateInterpolator
+NormalInterpolator
+

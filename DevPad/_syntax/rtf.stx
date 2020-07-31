@@ -1,0 +1,12 @@
+;Developers Pad Syntax File
+;Comment text with ; symbol
+;1=True,0=False
+[Main]
+Version=1
+Name=RTF
+FilterName=RTF Files
+Filter=*.rtf
+
+[Options]
+FileCode=0
+FileType=2

@@ -1,0 +1,115 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = Python
+FilterName = 
+Filter = 
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 0
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+IndentAfter = 
+OutdentAfter = 
+ColourByLine = 0
+Operators = 
+String = "'
+StringEsc = \
+StringEncoded = \"
+SingleComment = #
+SingleCommentAlt = 
+SingleCommentEsc = \
+CommentStart = 
+CommentEnd = 
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9
+CommentColour = &H9700
+KeywordColour = &HFF5757
+KeywordAltColour = &HFF00FF
+TextColour = &H0
+OperatorColour = &H0
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+
+
+[Keywords]
+
+
+
+[KeywordsAlt]
+
+__init__
+__del__
+__repr__
+__str__
+__cmp__
+__hash__
+__nonzero__
+__getattr__
+__setattr__
+__delattr__
+__call__
+__len__
+__getitem__
+__setitem__
+__delitem__
+__getslice__
+__setslice__
+__delslice__
+__add__
+__sub__
+__mul__
+__div__
+__mod__
+__divmod__
+__pow__
+__lshift__
+__rshift__
+__and__
+__xor__
+__or__
+__radd__
+__rsub__
+__rmul__
+__rdiv__
+__rmod__
+__rdivmod__
+__rpow__
+__rlshift__
+__rrshift__
+__rand__
+__rxor__
+__ror__
+__neg__
+__pos__
+__abs__
+__invert__
+__complex__
+__int__
+__long__
+__float__
+__oct__
+__hex__
+__coerce__
+__debug__
+__dict__
+__methods__
+__members__
+__class__
+__bases__
+__name__
+

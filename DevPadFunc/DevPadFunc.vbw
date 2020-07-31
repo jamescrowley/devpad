@@ -1,0 +1,10 @@
+GCommonDialog = 2, 44, 722, 365, 
+clsHookDlg = -183, 90, 632, 351, 
+modDialogHook = 154, 154, 890, 551, 
+modDeclares = 22, 22, 641, 374, C
+clsBrowseForFolder = 44, 44, 663, 396, 
+clsCaptureBF = 132, 132, 671, 656, 
+ICaptureBF = 110, 110, 664, 634, C
+modBrowseForFolder = 242, 242, 703, 766, 
+clsHTMLHelp = 66, 66, 729, 590, 
+clsDeclares = 132, 132, 686, 656, C

@@ -1,0 +1,190 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = VisualM
+FilterName = 
+Filter = 
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 1
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+ColourByLine = 1
+Operators = }{+-=!)(
+String = "
+StringEsc = 
+StringEncoded = \"
+SingleComment = '
+SingleCommentAlt = 
+SingleCommentEsc = 
+CommentStart = /*
+CommentEnd = */
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9,\44,(,),;
+CommentColour = &H8000
+KeywordColour = &H7F0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &H0
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+Verb
+
+
+[Keywords]
+
+INT
+FLOAT
+OBJ
+STR
+LIST
+ERR
+player
+this
+caller
+verb
+args
+argstr
+dobj
+dobjstr
+prepstr
+iobj
+iobjstr
+NUM
+abs
+acos
+add_property
+add_verb
+asin
+atan
+binary_hash
+boot_player
+buffered_output_length
+call_function
+caller_perms
+callers
+ceil
+children
+chparent
+clear_property
+connected_players
+connected_seconds
+connection_name
+connection_option
+connection_options
+cos
+cosh
+create
+crypt
+ctime
+db_disk_size
+decode_binary
+delete_property
+delete_verb
+disassemble
+dump_database
+encode_binary
+equal
+eval
+exp
+floatstr
+floor
+flush_input
+force_input
+function_info
+idle_seconds
+index
+is_clear_property
+is_member
+is_player
+kill_task
+length
+listappend
+listdelete
+listen
+listeners
+listinsert
+listset
+log
+log10
+match
+max
+max_object
+memory_usage
+min
+move
+notify
+object_bytes
+open_network_connection
+output_delimiters
+parent
+pass
+players
+properties
+property_info
+queue_info
+queued_tasks
+raise
+random
+read
+resume
+rindex
+rmatch
+seconds_left
+server_log
+server_version
+set_connection_option
+set_player_flag
+set_property_info
+set_task_perms
+set_verb_args
+set_verb_code
+set_verb_info
+setadd
+setremove
+shutdown
+sin
+sinh
+sqrt
+strcmp
+string_hash
+strsub
+substitute
+suspend
+tan
+tanh
+task_id
+task_stack
+ticks_left
+time
+tofloat
+toint
+toliteral
+tonum
+toobj
+tostr
+trunc
+typeof
+unlisten
+valid
+value_bytes
+value_hash
+verb_args
+verb_code
+verb_info
+verbs
+version_info

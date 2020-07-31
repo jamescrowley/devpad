@@ -1,0 +1,14 @@
+;Developers Pad Syntax File
+;Comment text with ; symbol
+;1=True,0=False
+[Main]
+Version=1
+Name=Plain Text
+FilterName=Text Files
+Filter=*.txt
+
+[Options]
+;Treat as code?
+FileCode = 0
+FileType = 0
+ColourByLine = 0

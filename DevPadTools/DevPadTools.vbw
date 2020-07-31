@@ -1,0 +1,13 @@
+frmClassSpy = 0, 0, 601, 306, , 154, 154, 670, 522, C
+frmInfo = 0, 0, 0, 0, C, 0, 0, 516, 368, C
+frmGenerate = 0, 0, 0, 0, C, 22, 22, 538, 390, C
+frmErrorConverter = 0, 0, 0, 0, C, 44, 44, 560, 412, C
+clsDocInfo = 0, 0, 0, 0, C
+clsClassSpy = 0, 0, 0, 0, C
+clsDLLBaseGenerator = 0, 0, 0, 0, C
+clsErrorConverter = 0, 0, 0, 0, C
+modDeclares = 132, 132, 733, 438, 
+frmSearch = 0, 0, 0, 0, C, 66, 66, 582, 434, C
+clsSearch = 0, 0, 0, 0, C
+frmCOMInfo = 0, 0, 0, 0, C, 88, 88, 604, 456, C
+clsCOMInfo = 0, 0, 0, 0, C

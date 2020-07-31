@@ -1,0 +1,91 @@
+<DevelopersPadProject>
+  <Settings
+    Name = "Demo Project"
+    Author = "James Crowley (VB Web Development)"
+    Version = "1.0"
+    Root = ""
+  >
+    <Description>
+    
+    </Description>
+  </Settings>
+  <Folders>
+    <Folder
+      Name = "Developers Pad"
+      Path = ""
+      Expanded = "1"
+    />
+    <Folder
+      Name = "VB Web"
+      Path = ""
+      Expanded = "1"
+    />
+    <Folder
+      Name = "dev"
+      Path = "VB Web"
+      Expanded = "1"
+    />
+  </Folders>
+  <Files>
+    <File
+      Name = "Web Root"
+      Folder = "Developers Pad"
+      RelPath = "C:\Inetpub\wwwroot\devpad_temp"
+      Type = "4"
+    />
+    <File
+      Name = "DevPad Remote"
+      Folder = "Developers Pad"
+      RelPath = "http://developerspad.vbdiamond.com/"
+      Type = "2"
+    />
+    <File
+      Name = "DevPad Local"
+      Folder = "Developers Pad"
+      RelPath = "http://devpad.localnetwork/"
+      Type = "2"
+    />
+    <File
+      Name = "Web Root"
+      Folder = "VB Web"
+      RelPath = "C:\Inetpub\wwwroot\vbweb\new"
+      Type = "4"
+    />
+    <File
+      Name = "WebManagement.exe"
+      Folder = "VB Web"
+      RelPath = "..\..\WebManagement\WebManagement.exe"
+      Type = "0"
+    />
+    <File
+      Name = "frmDocument.frm"
+      Folder = "VB Web\dev"
+      RelPath = ".\DevPad\Forms\frmDocument.frm"
+      Type = "0"
+    />
+    <File
+      Name = "frmAddIns.frm"
+      Folder = "VB Web\dev"
+      RelPath = ".\DevPad\Forms\frmAddIns.frm"
+      Type = "0"
+    />
+    <File
+      Name = "frmAbout.frm"
+      Folder = "VB Web\dev"
+      RelPath = ".\DevPad\Forms\frmAbout.frm"
+      Type = "0"
+    />
+    <File
+      Name = "DevPad.vbp"
+      Folder = "VB Web"
+      RelPath = ".\DevPad\DevPad.vbp"
+      Type = "0"
+    />
+    <File
+      Name = "shots.htm"
+      Folder = "Developers Pad"
+      RelPath = "..\..\..\..\..\..\..\..\..\Inetpub\wwwroot\devpad_temp\shots\default.php"
+      Type = "0"
+    />
+  </Files>
+</DevelopersPadProject>

@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>Developers Pad Readme</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+p {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+h1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12pt; font-weight: bold}
+h2 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold}
+td {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<h1>Developers Pad Readme</h1>
+<p><b>Readme</b> | <a href="faq.htm">FAQ</a> | <a href="license.htm">License</a></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr> 
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h2>Contents</h2>
+<p>1. <b><a href="#online">Developers Pad Online</a></b><br>
+  2. <b><a href="#history">Revision History</a></b><br>
+  3. <b><a href="license.htm">License</a></b><br>
+  4. <a href="#source"><b>Source Code</b></a><br>
+  &nbsp; &nbsp; - <a href="#naming">Naming Conventions</a><br>
+  &nbsp; &nbsp; - <a href="#modify">Modifying the Source Code</a><br>
+  &nbsp; &nbsp; - <a href="#submitting">Submitting Modified Source To Developers 
+  Pad</a><br>
+  5. <a href="#addins"><b>Add-Ins</b></a></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h1><a name="online"></a>Online</h1>
+<p>For the latest updates and more information, visit Developers Pad online at <b><a href="http://www.developerspad.com/" target="_blank">DevelopersPad.com</a></b></p>
+<p>To report a bug, please visit the <a href="http://www.developerspad.com/forum/" target="_blank">Developers Pad forum</a>, or email me directly: <a href="mailto:james@vbweb.co.uk">james@vbweb.co.uk</a></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+
+<h1><a name="history"></a>Revision History</h1>
+<h2>Next Version</h2>
+<p><i>Planned Features</i><br>
+  - Interface for entering server details for IE preview<br>
+  - Capitalize text function<br>
+  - Find in Files completed<br>
+</p>
+<h2>Current Version</h2>
+<p><i>New Features</i><br>
+  - New performance options for decreasing up startup time<br>
+  - IE Preview can now preview Server-Side pages without saving<br>
+  - Convert to Uppercase/lowercase<br>
+  - String Encode/Decode<br>
+  - Auto-Indent/Outdent after {} character<br>
+  - Pressing Home key goes to start of text, and then beginning of line<br>
+  - SingleCommentAlt property added<br>
+  - Save Workspace remembers active document<br>
+  - Support added for Assembly x86, Modula-2, VRML, Fortran, Python and Cobol</p>
+<p><i>Fixed</i><br>
+  - A 'Invalid procedure call or argument' error occured when deleting text at very the start of the document<br>
+  - You can now activate a window on Win 98 using the Window menu<br>
+  - You were prompted to save a non-existent document when quitting (if you had tried to open a file and failed)<br>
+  - GPF occured when pressing backspace key<br>
+  - A file with no extension was opened in the first language listed, rather than Plain-Text mode<br>
+  - Developers Pad now correctly parses Send To messages, and opens more than one file correctly from explorer<br>
+  - StringEsc property was not saved<br>
+  - Open/Save As dialogs appeared too small to display everything on some machines<br>
+  - Open/Save buttons were missing on Open/Save As dialogs on a non-English PC<br>
+  - Save Workspace incorrectly saved flag positions across multiple documents<br>
+  - A number of errors in the syntax files</p>
+<p><i>Remaining Issues</i><br>
+  - The editor cannot successfully load Unicode files. A messy fix has been implemented until a permament solution can be found!<br>
+  - Toolbar appears without any icons, causing multiple errors on some PC's (still). Current Resolution: Download the source code... Help me <a href="mailto:james@vbweb.co.uk">solve this</a>, please!!</p>
+<h2>Version 0.5.913</h2>
+<p><i>New Features</i><br>
+  - Bookmarks<br>
+  - Workspaces<br>
+  - Procedure Listing improved<br>
+  - Options dialog includes support for editing language syntax files</p>
+<p><i>Fixed</i><br>
+  - GPF occured when devpad was started up too small<br>
+  - Project properties were not always saved<br>
+  - DevPad exited when clicking Browse for the VB Application path<br>
+  - DevPad Project XML was incorrectly formatted<br>
+  - Default Project Settings were ignored</br>
+  - 'Flat' option buttons became un-flat when holding the mouse down over the checkbox and moving it away<br>
+  - Uncommenting code which was at beginning of document left first char an incorrect colour<br>
+  - Code was not colourized when changing document in the Find results window<br>
+  - GPF occured when quitting Developers Pad after switching focus from TreeView 
+  to another control in the Manage Add-Ins or Options dialog.<br>
+  - Colour by line did not work when the line before was empty<br>
+  - Drag &amp; Drop was enabled in options dialog<br>
+  - [Up] item in code explorer was not first item in the list <br>
+  - Scrolling with mouse wheel left line numbering out of sync<br>
+  - Editor did not automatically scroll upwards when attempting drag &amp; drop<br>
+  - Printing dialog could not be cancelled<br>
+  - GPF occasionally occured when selecting item from Procedure Jump-To box<br>
+  - Colourizing after scrolling improved<br>
+  - Line numbering always aligns with top of line<br>
+  - 'All Supported Files' filter didn't display all supported files<br>
+  - Selecting multiple documents to close from Documents window didn't always 
+  close them</p>
+<p><i>Remaining Issues</i><br>
+  - Toolbar appears without any icons, causing multiple errors on some PC's (apparently with Windows 2000 and VB 6 SP 5). Current Resolution: Download the source code
+</p>
+<p><b>Version 0.5.898</b></p>
+<p><i>New Features</i><br>
+  - Syntax files added for Pascal, InstallScript and JSP files<br>
+  - Multi-Line comments now supported for characters other than /* and */</p>
+<p><i>Fixed</i><br>
+  - Dragging a file onto Developers Pad no longer causes GPF<br>
+  - Clicking Browse... for the VB path in the Options dialog no longer causes 
+  GPF<br>
+  - Invalid Subscript index error no longer occurs when you click Project|Add|Folder 
+  Shortcut<br>
+  - Find &amp; Replace did not register document as changed in a plain-text file.</p>
+<p><i>Remaining Issues</i><br>
+  - GPF occurs when quitting Developers Pad after switching focus from TreeView 
+  to another control in the Manage Add-Ins dialog. This is due to a problem with 
+  the vbwTreeView ActiveX... any ideas?!</p>
+<p><b>Version 0.5.863</b></p>
+<p>BETA 2 Released</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr> 
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h1><a name="license"></a>License</h1>
+<p>Please <a href="license.htm">click here</a> to view the license</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr> 
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h1><a name="source"></a>Source Code</h1>
+<p>The source code for Developers Pad is freely available at <a href="http://www.developerspad.com/" target="_blank">DevelopersPad.com</a> 
+  (written in Visual Basic). However, this does not mean you are free to do whatever 
+  you like with it! Please see the source code section of the license (above) 
+  for your rights.</p>
+<p>In order to keep control of the Developers Pad project, we have set down a 
+  few guidelines in order to ensure the source code remains consistent.</p>
+<p><b><a name="naming"></a>Naming Conventions</b></p>
+<p>First of all, I need to admit that the naming conventions currently used in 
+  Developers Pad are not consistent. However, all source code written in the last 
+  few months is! You <b>must follow</b> these naming conventions for modified 
+  source. </p>
+<p><b>1.</b> Variables should have a one-letter suffix indicating their data type</p>
+<table width="400" border="0">
+  <tr> 
+    <td><b>Data Type</b></td>
+    <td><b>Suffix</b></td>
+  </tr>
+  <tr>
+    <td>Boolean</td>
+    <td>b</td>
+  </tr>
+  <tr> 
+    <td>Double</td>
+    <td>f</td>
+  </tr>
+  <tr> 
+    <td>Integer</td>
+    <td>n</td>
+  </tr>
+  <tr> 
+    <td>Long</td>
+    <td>l</td>
+  </tr>
+  <tr> 
+    <td>Object</td>
+    <td>o</td>
+  </tr>
+  <tr> 
+    <td>String</td>
+    <td>s</td>
+  </tr>
+  <tr> 
+    <td>UDT or Data Struct (ie POINTAPI)</td>
+    <td>t</td>
+  </tr>
+  <tr> 
+    <td>Variant</td>
+    <td>v</td>
+  </tr>
+</table>
+<p><b>2.</b> Indenting should be 4 spaces.</p>
+<p><b>3.</b> Private procedures should be suffixed with 'p'.</p>
+<p><b>4.</b> Private variables of a Class Module, Form etc (not individual procedures) 
+  should be suffixed with 'm_', and then the appropriate data type.</p>
+<p><b>5.</b> Comments should be ' with a space before the comment text. They should 
+  be on their own line where possible.</p>
+<p><i>Example</i></p>
+<p><code>Private m_sFileName As String<br>
+  Private Sub pDisplayAll(bDo As Boolean)<br>
+  Dim sNew As String<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;' do we need to do something?<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;If bDo Then<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' do something<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+  End Sub<br>
+  Public Sub ChangeSel()<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;'public procedure<br>
+  End Sub</code></p>
+<h2><a name="modify"></a>Modifying the Source Code</h2>
+<p>All code changes that are submitted should not change or delete existing code. 
+  Existing codeshould be commented out, and the new code should have a header 
+  and footer comments so that it is obvious what was changed.</p>
+<p><i>Example</i></p>
+<p><code>'### [Name of Changer] [Date Changed] ###<br>
+  '### [Description of Change and Reason Why] ###<br>
+  <br>
+  'Old code commented out<br>
+  'If FOO Then<br>
+  '&nbsp;&nbsp;&nbsp;&nbsp;blah<br>
+  'Else<br>
+  '&nbsp;&nbsp;&nbsp;&nbsp;blahblah<br>
+  'End If<br>
+  <br>
+  '### New code ###<br>
+  <br>
+  If FOOFOO Then<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;blah<br>
+  End If<br>
+  <br>
+  '### End Change ###</code></p>
+<h2><a name="submitting"></a>Submitting the Source Code</h2>
+<p>Modified source code should be sent to <a href="mailto:james@vbweb.co.uk">devpad@vbweb.co.uk</a>.<b> 
+  Only new or changed files are to be sent. </b> A short description should be 
+  included in the e-mail as well that details of what you are sending.</p>
+<p>Your source code may, at our discretion, be integrated into the core program. 
+  Credit will be given if this is the case. We reserve the right to reject changes 
+  without reason.</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr> 
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h1><a name="addins"></a>Add-Ins</h1>
+<p>Guidelines for creating add-ins are present in the Developers Pad Add-In SDK 
+  available at <a href="http://www.developerspad.com/" target="_blank">DevelopersPad.com</a>.</p>
+</body>
+</html>

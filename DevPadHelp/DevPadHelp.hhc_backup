@@ -1,0 +1,215 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Font" value="Verdana,8,0">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Overview">
+    <param name="Local" value="Overview.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Getting Started">
+    <param name="Local" value="Info\Info_Getting_Started.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Features">
+      <param name="Local" value="Info\Info_Features.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Getting Started">
+      <param name="Local" value="Info\Info_Getting_Started.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Credits">
+      <param name="Local" value="Info\Info_Credits.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="License &amp; Distribution">
+      <param name="Local" value="Info\Info_License_Distribution.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Dialogs">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Edit Entry Dialog">
+      <param name="Local" value="Dialogs\Dlg_Edit_Entry.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Find Dialog">
+      <param name="Local" value="Dialogs\Dlg_Find.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Find Results Dialog">
+      <param name="Local" value="Dialogs\Dlg_Find_Results.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Jump-To Window">
+      <param name="Local" value="Dialogs\Dlg_Goto.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Insert Text Window">
+      <param name="Local" value="Dialogs\Dlg_Insert_Text.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Manage Add-Ins">
+      <param name="Local" value="Dialogs\Dlg_Manage_AddIns.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Message Window">
+      <param name="Local" value="Dialogs\Dlg_Message.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Open Dialog">
+      <param name="Local" value="Dialogs\Dlg_Open.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Options Dialog">
+      <param name="Local" value="Dialogs\Dlg_Options.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="IE Preview">
+      <param name="Local" value="Dialogs\Dlg_Preview.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Project Window">
+      <param name="Local" value="Dialogs\Dlg_Project.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Project Properties Dialog">
+      <param name="Local" value="Dialogs\Dlg_Project_Properties.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Save Dialog">
+      <param name="Local" value="Dialogs\Dlg_Save.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Save As Dialog">
+      <param name="Local" value="Dialogs\Dlg_Save_As.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Editor">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Customizing">
+      <param name="Local" value="Dialogs\Dlg_Options.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Jump-To Window">
+      <param name="Local" value="Dialogs\Dlg_Goto.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Find Dialog">
+      <param name="Local" value="Dialogs\Dlg_Find.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Find Results Dialog">
+      <param name="Local" value="Dialogs\Dlg_Find_Results.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Projects">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Project Window">
+      <param name="Local" value="Dialogs\Dlg_Project.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Project Formats">
+      <param name="Local" value="Info\Info_Project_Formats.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Properties Dialog">
+      <param name="Local" value="Dialogs\Dlg_Project_Properties.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Project Items">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Email Links">
+        <param name="Local" value="Project\Project_Email_Links.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Files">
+        <param name="Local" value="Project\Project_Files.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Live Folders">
+        <param name="Local" value="Project\Project_Live_Folders.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Static Folders">
+        <param name="Local" value="Project\Project_Static_Folders.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="URL Links">
+        <param name="Local" value="Project\Project_URL_Links.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Insert Code Window">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Edit Entry Dialog">
+      <param name="Local" value="Dialogs\Dlg_Edit_Entry.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Insert Text Window">
+      <param name="Local" value="Dialogs\Dlg_Insert_Text.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Customizing">
+    <param name="Local" value="Info\Info_Customising.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Customizing Syntax Highlighting">
+      <param name="Local" value="Customise\Cust_Syntax_Highlighting.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Options Dialog">
+      <param name="Local" value="Dialogs\Dlg_Options.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Add-Ins">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Manage Add-Ins Dialog">
+      <param name="Local" value="Dialogs\Dlg_Manage_AddIns.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Creating Add-Ins">
+      <param name="Local" value="Info\Info_Creating_AddIns.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Support">
+    <param name="Local" value="Info\Info_Support.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Online Forum">
+    <param name="Local" value="http://www.developerspad.com/forum/">
+    <param name="ImageNumber" value="15">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Online Knowledge Base">
+    <param name="Local" value="http://www.developerspad.com/kb/">
+  </object>
+</ul>
+</html>

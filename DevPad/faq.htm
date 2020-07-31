@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Developers Pad FAQ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+p {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+h1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12pt; font-weight: bold}
+h2 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold}
+td {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+<h1>Developers Pad FAQ</h1>
+<p><a href="readme.htm">Readme</a> | <b>FAQ</b> | <a href="license.htm">License</a></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr> 
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h2>Contents</h2>
+<p><b>
+<a href="#1">How do I create an add-in for Developers Pad?</a><br>
+<a href="#2">Why doesn't Developers Pad preview server-side scripts correctly?</a><br>
+<a href="#3">Does Developers Pad support xyz programming language?</a><br>
+<a href="#4">How can I decrease startup times?</a><br>
+
+
+</b></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h2><a name="1"></a>How do I create an add-in for Developers Pad?</h2>
+<p>Developers Pad includes full support for add-ins. If you are interested, please download the Developers Pad Add-In SDK available at <a href="http://www.developerspad.com/download/" target="_blank">DevelopersPad.com</a>. If you have any futher queries, please email <a href="mailto:james@vbweb.co.uk">james@vbweb.co.uk</a></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h2><a name="2"></a>Why doesn't Developers Pad preview server-side scripts correctly?</h2>
+<p>In order for Developers Pad to preview server-side scripts, you need to make some configuration changes. At the moment, no intuitive way has been implemented to do this.. (Next version, promise!). For the moment, please follow these instructions:<br><br>
+1. Goto Tools|Options. Select IE Preview. <br>
+2. In the Local Path box, specify the local path of a web. You can seperate these with a ; (without the quotes).<br>
+3. In the Server box, specify the address of the server each local path corresponds to (it must be in the same order). For example<br>
+<br>
+LocalPath: <code>C:\inetpub\wwwroot\vbweb;c:\inetpub\wwwroot\devpad</code><br>
+ServerPath: <code>http://vbweb.localnetwork;http://devpad.localnetwork</code><br>
+<br>
+This maps <code>C:\inetpub\wwwroot\vbweb</code> to <code>http://vbweb.localnetwork</code> and so on. Please note no trailing slashes should be present.</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h2><a name="3"></a>Does Developers Pad support xyz programming language?</h2>
+<p>Developers Pad already includes support for a wide range of languages. If it doesn't currently have the language you want, you can add the support yourself! Simply go to Tools|Options, and click Languages. Next, click on the New Language button. You can now fill out the syntax information for your language. This will generate a new file in the <i>DevPadPath</i>\_syntax\ directory. When you have finished, please send the file to <a href="mailto:james@vbweb.co.uk">james@vbweb.co.uk</a> so it can be included in the next version.</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="1">
+  <tr>
+    <td bgcolor="#CCCCCC" width="1" height="1"><img src="shim.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<h2><a name="4"></a>How can I decrease startup times?</h2>
+<p>Developers Pad now includes a number of 'optimization' settings. Currently, these need to be set manually in the registry. The entries for the following settings must be entered in the <code>HKEY_CURRENT_USER\Software\VB and VBA Program Settings\DevPad\Settings</code> registry key, and must be of <code>REG_SZ</code> type.</p>
+<table border=0>
+<tr>
+  <td><b>Key Name</b></td>
+  <td nowrap><b>Valid Settings</b></td>
+  <td><b>Description</b></td>
+</tr>
+<tr>
+  <td><b>SU_LoadDocument</b></td>
+  <td nowrap>0 (Off),1 (On)</td>
+  <td>Should Developers Pad load a new document when loaded up?</td>
+</tr>
+<tr>
+  <td><b>SU_ShowProject</b></td>
+  <td>0 (Off),1 (On)</td>
+  <td>Should Developers Pad load the project window when loaded up (irrespective of any other project settings)?</td>
+</tr>
+<tr>
+  <td><b>SU_InitAddins</b></td>
+  <td>0 (Off),1 (On)</td>
+  <td>Should Developers Pad read the addins.ini file when starting up? NB: If you choose this option, you need to goto Tools|Manage Add-Ins in order for the Add-ins to be loaded and used.</td>
+</tr>
+</body>
+</html>

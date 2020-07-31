@@ -1,0 +1,102 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = IDL
+FilterName = IDL/ODL Files
+Filter = *.odl;*.idl
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 0
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+IndentAfter = {
+OutdentAfter = }
+ColourByLine = 1
+Operators = 
+String = "
+StringEsc = 
+StringEncoded = \"
+SingleComment = //
+SingleCommentAlt = 
+SingleCommentEsc = \
+CommentStart = /*
+CommentEnd = */
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9,\44,(,),;,[,]
+CommentColour = &H8000
+KeywordColour = &HBF0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &H0
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+
+
+[Keywords]
+
+#include
+import
+importlib
+uuid
+version
+helpstring
+default
+enum
+char
+int
+float
+double
+in
+out
+long
+helpstring
+propget
+propput
+retval
+pointer_default
+nonextensible
+dual
+object
+interface
+v1_enum
+typedef
+library
+struct
+local
+ref
+unique
+ptr
+string
+ignore
+callback
+context_handle
+propputref
+endpoint
+coclass
+dispinterface
+module
+union
+void
+helpcontext
+id
+helpfile
+lcid
+const
+cpp_quote
+iid_is
+#pragma
+midl_echo

@@ -1,0 +1,92 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = InstallScript
+FilterName = InstallShield Scripts
+Filter = *.rul
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 1
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+IndentAfter = 
+OutdentAfter = 
+ColourByLine = 1
+Operators = ;()+&|=
+String = "
+StringEsc = \
+StringEncoded = \"
+SingleComment = //
+SingleCommentAlt = 
+SingleCommentEsc = \
+CommentStart = /*
+CommentEnd = */
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \9,\32,\13,\10
+CommentColour = &H8000
+KeywordColour = &H7F0000
+KeywordAltColour = &H0
+TextColour = &H0
+OperatorColour = &HC8
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+function
+
+
+[Keywords]
+
+#include
+end
+return
+abort
+endfor
+if
+begin
+endif
+step
+endprogram
+BYREF
+endswitch
+switch
+case
+endwhile
+then
+exit
+to
+default
+for
+program
+typedef
+downto
+function
+prototype
+until
+else
+goto
+repeat
+while
+elseif
+LIST
+STRING
+BOOL
+INT
+HWND
+SHORT
+POINTER
+CHAR
+NUMBER
+LONG

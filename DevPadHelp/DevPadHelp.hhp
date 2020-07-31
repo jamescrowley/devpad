@@ -1,0 +1,62 @@
+[OPTIONS]
+Compiled File=DevPadHelp.chm
+Title=Developers Pad Help
+Contents File=DevPadHelp.hhc
+Index File=DevPadHelp.hhk
+Default topic=Overview.htm
+Default Window=MainWindow
+Error log file=
+Display compile progress=Yes
+Display compile notes=Yes
+Full-text search=Yes
+Binary Index=No
+Auto Index=No
+Enhanced decompilation=No
+Binary TOC=No
+Flat=No
+
+[WINDOWS]
+MainWindow="Developers Pad Help","DevPadHelp.hhc","DevPadHelp.hhk","","","http://www.developerspad.com/help/","Help Online",,,0x60520,100,0x4280e,[14,42,490,528],0x0,0x0,,0,0,0
+
+[FILES]
+Overview.htm
+Info\Info_Getting_Started.htm
+Info\Info_Credits.htm
+Info\Info_Features.htm
+Info\Info_Creating_AddIns.htm
+Dialogs\Dlg_Manage_AddIns.htm
+Dialogs\Dlg_Insert_Text.htm
+Dialogs\Dlg_Project.htm
+Dialogs\Dlg_Edit_Entry.htm
+Dialogs\Dlg_Project_Properties.htm
+Dialogs\Dlg_Options.htm
+Dialogs\Dlg_Find.htm
+Info\Info_Project_Formats.htm
+Dialogs\Dlg_Open.htm
+Dialogs\Dlg_Preview.htm
+Dialogs\Dlg_Save.htm
+Dialogs\Dlg_Save_As.htm
+Dialogs\Dlg_Message.htm
+Dialogs\Dlg_Goto.htm
+Customise\Cust_Syntax_Highlighting.htm
+Dialogs\Dlg_Find_Results.htm
+Info\Info_License_Distribution.htm
+Info\Info_Customising.htm
+Project\Project_Static_Folders.htm
+Project\Project_Live_Folders.htm
+Project\Project_Email_Links.htm
+Project\Project_URL_Links.htm
+Project\Project_Files.htm
+ehlpdhtm.js
+
+DevPadHelp.brs
+[ALIAS]
+#include DevPadHelp.ali
+
+[MAP]
+#include BSSCDefault.h
+
+[TEXT POPUPS]
+BSSCDefault.h
+
+

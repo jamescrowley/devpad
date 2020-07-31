@@ -1,0 +1,29 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+  <param name="Font" value="Verdana,8,0">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Class Spy">
+    <param name="Name" value="Class Spy">
+    <param name="Local" value="Tools\Class_Spy.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="COM Information">
+    <param name="Name" value="COM Information">
+    <param name="Local" value="Tools\COM_Information.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DLL Base Address Generator">
+    <param name="Name" value="DLL Base Address Generator">
+    <param name="Local" value="Tools\DLL_Base_Address_Generator.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Overview">
+    <param name="Name" value="Overview">
+    <param name="Local" value="Overview.htm">
+  </object>
+</ul>
+</html>

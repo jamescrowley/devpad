@@ -1,0 +1,123 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = CSS
+FilterName = Cascading Style Sheets
+Filter = *.css
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 1
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+ColourByLine = 1
+Operators = :;{}
+String = "
+StringAlt = '
+SingleComment = //
+SingleCommentEsc = \
+CommentStart = /*
+CommentEnd = */
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9,\44,(,)
+CommentColour = &H8000
+KeywordColour = &HBF0000
+KeywordAltColour = &HFF57FF
+TextColour = &H0
+OperatorColour = &HC8
+HTMLCommentColour = &H0
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+
+
+[Keywords]
+
+absolute-size
+background
+background-attachment
+background-color
+background-image
+background-repeat
+border
+border-bottom
+border-bottom-width
+border-color
+border-left
+border-left-width
+border-right
+border-right-width
+border-style
+border-top
+border-top-width
+border-width
+clear
+color
+cursor
+display
+family-name
+filter
+float
+font
+font-family
+font-size
+font-variant
+font-weight
+generic-family
+height
+length
+letter-spacing
+line-height
+list-style
+list-style-image
+list-style-position
+list-style-type
+margin
+margin-bottom
+margin-left
+margin-right
+margin-top
+padding
+padding-bottom
+padding-left
+padding-right
+padding-top
+percentage
+position
+relative-size
+strength
+text-align
+text-decoration
+text-indent
+text-transform
+url
+vertical-align
+white-space
+width
+word-spacing
+font-style
+
+[KeywordsAlt]
+
+A
+H1
+H2
+H3
+H4
+H5
+H6
+TD
+P
+TR
+

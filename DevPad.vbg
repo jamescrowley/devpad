@@ -1,0 +1,5 @@
+VBGROUP 5.0
+StartupProject=DevPad\DevPad.vbp
+Project=DevPadFunc\DevPadFunc.vbp
+Project=DevPadEditor\DevPadEditor.vbp
+Project=DevPadTools\DevPadTools.vbp
