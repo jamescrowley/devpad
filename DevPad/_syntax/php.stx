@@ -3,7 +3,7 @@
 Version = 1.0
 Name = PHP
 FilterName = PHP Files
-Filter = *.php
+Filter = *.php;*.php4;*.php3
 
 [Options]
 FileCode = 1

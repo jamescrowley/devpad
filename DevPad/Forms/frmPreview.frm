@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}#1.1#0"; "shdocvw.dll"
 Object = "{C4925FC3-1606-11D4-82BB-004005AAE138}#5.2#0"; "VBWIML.OCX"
-Object = "{1F5999A2-1D0B-11D4-82CF-004005AAE138}#6.1#0"; "VBWTBA~2.OCX"
+Object = "{1F5999A2-1D0B-11D4-82CF-004005AAE138}#6.1#0"; "VBWTBA~1.OCX"
+Object = "{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}#1.1#0"; "shdocvw.dll"
 Begin VB.Form frmPreview 
    ClientHeight    =   5460
    ClientLeft      =   3060
@@ -22,6 +22,31 @@ Begin VB.Form frmPreview
    ScaleHeight     =   5460
    ScaleWidth      =   6420
    StartUpPosition =   1  'CenterOwner
+   Begin SHDocVwCtl.WebBrowser brwWebBrowser 
+      Height          =   3720
+      Left            =   735
+      TabIndex        =   4
+      Top             =   1050
+      Width           =   2790
+      ExtentX         =   4921
+      ExtentY         =   6562
+      ViewMode        =   0
+      Offline         =   0
+      Silent          =   0
+      RegisterAsBrowser=   0
+      RegisterAsDropTarget=   1
+      AutoArrange     =   0   'False
+      NoClientEdge    =   0   'False
+      AlignLeft       =   0   'False
+      NoWebView       =   0   'False
+      HideFileNames   =   0   'False
+      SingleClick     =   0   'False
+      SingleSelection =   0   'False
+      NoFolders       =   0   'False
+      Transparent     =   0   'False
+      ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
+      Location        =   ""
+   End
    Begin VB.PictureBox picStatus 
       Align           =   2  'Align Bottom
       BorderStyle     =   0  'None
@@ -29,7 +54,7 @@ Begin VB.Form frmPreview
       Left            =   0
       ScaleHeight     =   255
       ScaleWidth      =   6420
-      TabIndex        =   3
+      TabIndex        =   2
       Top             =   5205
       Width           =   6420
    End
@@ -61,13 +86,13 @@ Begin VB.Form frmPreview
       Left            =   0
       ScaleHeight     =   720
       ScaleWidth      =   6420
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   0
       Width           =   6420
       Begin VB.ComboBox cboAddress 
          Height          =   315
          Left            =   30
-         TabIndex        =   2
+         TabIndex        =   1
          Text            =   "Combo1"
          Top             =   360
          Width           =   6135
@@ -81,38 +106,13 @@ Begin VB.Form frmPreview
       Begin vbwTBar.cToolbarHost tbhMain 
          Height          =   345
          Left            =   45
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   0
          Width           =   915
          _ExtentX        =   1614
          _ExtentY        =   609
          BorderStyle     =   0
       End
-   End
-   Begin SHDocVwCtl.WebBrowser brwWebBrowser 
-      Height          =   3735
-      Left            =   330
-      TabIndex        =   0
-      Top             =   1005
-      Width           =   5400
-      ExtentX         =   9525
-      ExtentY         =   6588
-      ViewMode        =   1
-      Offline         =   0
-      Silent          =   0
-      RegisterAsBrowser=   1
-      RegisterAsDropTarget=   0
-      AutoArrange     =   -1  'True
-      NoClientEdge    =   -1  'True
-      AlignLeft       =   0   'False
-      NoWebView       =   0   'False
-      HideFileNames   =   0   'False
-      SingleClick     =   0   'False
-      SingleSelection =   0   'False
-      NoFolders       =   0   'False
-      Transparent     =   0   'False
-      ViewID          =   "{0057D0E0-3573-11CF-AE69-08002B2E1262}"
-      Location        =   "http:///"
    End
    Begin VB.Menu mnuSizeTOP 
       Caption         =   "&SizePop"
@@ -276,15 +276,15 @@ End Sub
 
 Private Sub mnuSize_Click(Index As Integer)
 Dim sCaption As String
-Dim lwidth As Long
+Dim lWidth As Long
 Dim lHeight As Long
 Dim lXPos As Long
     sCaption = mnuSize(Index).Caption
     lXPos = InStr(1, sCaption, "x")
-    lwidth = Left$(sCaption, lXPos - 1)
+    lWidth = Left$(sCaption, lXPos - 1)
     lHeight = Mid$(sCaption, lXPos + 2, InStr(lXPos + 2, sCaption, " ") - lXPos - 2)
     Height = (lHeight * Screen.TwipsPerPixelY) + picStatus.Height + brwWebBrowser.Top + 405
-    Width = (lwidth * Screen.TwipsPerPixelX) + 120
+    Width = (lWidth * Screen.TwipsPerPixelX) + 120
 End Sub
 
 Private Sub picStatus_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)

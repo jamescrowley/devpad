@@ -1,6 +1,6 @@
 Type=Control
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\..\..\WINNT\system32\STDOLE2.TLB#OLE Automation
-Reference=*\G{0E2D86D3-1445-11D4-82B5-004005AAE138}#1.0#0#..\COMPON~1\VBWSUB~1.DLL#VB Web Subclassing DLL
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\..\..\WINNT\System32\stdole2.tlb#OLE Automation
+Reference=*\G{0E2D86D3-1445-11D4-82B5-004005AAE138}#1.0#0#..\..\..\..\..\..\..\..\..\Documents and Settings\Administrator\My Documents\Development\Visual Basic\Regular\DevPad\Current Release\Components\vbwSubClass.dll#VB Web Subclassing DLL
 Object={3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0; richtx32.ocx
 UserControl=UserControls\Editor.ctl
 Class=clsFlatCombo; ClassModules\cFlatCombo.cls
@@ -20,7 +20,7 @@ CompatibleEXE32="..\Compiled\Compat\DevPadEditor_compat.ocx"
 VersionCompatible32="1"
 MajorVer=1
 MinorVer=0
-RevisionVer=4
+RevisionVer=5
 AutoIncrementVer=1
 ServerSupportFiles=0
 VersionCompanyName="VB Web Development"

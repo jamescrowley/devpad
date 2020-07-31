@@ -139,7 +139,6 @@ Begin VB.UserControl Editor
       _ExtentY        =   5080
       _Version        =   393217
       BorderStyle     =   0
-      Enabled         =   -1  'True
       HideSelection   =   0   'False
       ScrollBars      =   3
       Appearance      =   0
@@ -168,7 +167,6 @@ Begin VB.UserControl Editor
       _ExtentY        =   5080
       _Version        =   393217
       BorderStyle     =   0
-      Enabled         =   -1  'True
       HideSelection   =   0   'False
       ScrollBars      =   3
       Appearance      =   0
@@ -648,11 +646,13 @@ Private Sub InsertCode(sCode As String, bReplaceSelection As Boolean, Optional b
         'set the text
         rtfMain.SelText = sCode
     End If
-    
+
     'doc has changed
+    m_bChanged = True
     rtfMain_Change
     'trigger sel change
     rtfMain_SelChange
+    
 End Sub
 Private Sub ReColourRange(sCode As String, lStart As Long, lEnd As Long)
     Dim vSyntax         As ColourStatus
@@ -858,6 +858,7 @@ Dim wParam As Long
     'sets the View Mode
     Select Case eViewMode
     Case ercWYSIWYG
+        If Printer Is Nothing Then Exit Property
         wParam = Printer.hdc
         lParam = Printer.Width
     Case ercWordWrap
@@ -887,26 +888,26 @@ Const GTL_PRECISE = 2
     'were before we modified the text...
     'if you don't have RichEd 3.0 we are in trouble!
     
-    f.flags = GTL_PRECISE
-    Debug.Print "StartVal:" & SendMessage(rtfMain.hwnd, EM_GETTEXTLENGTHEX, VarPtr(f), 0)
+    'f.flags = GTL_PRECISE
+    'Debug.Print "StartVal:" & SendMessage(rtfMain.hwnd, EM_GETTEXTLENGTHEX, VarPtr(f), 0)
     
     'save the sel
     On Error Resume Next
     SendMessage rtfMain.hwnd, EM_EXGETSEL, 0, m_rtfPos_tCR
     'Get beginning point...
     SendMessage rtfMain.hwnd, EM_GETSCROLLPOS, 0, m_rtfPos_tP
-    
+    Debug.Print m_rtfPos_tCR.cpMin
 End Sub
 Private Sub RestoreCursorPos()
-Dim f As GETTEXTLENGTHEX
-Const GTL_PRECISE = 2
+'Dim f As GETTEXTLENGTHEX
+'Const GTL_PRECISE = 2
     'restore the selection
     SendMessage rtfMain.hwnd, EM_EXSETSEL, 0, m_rtfPos_tCR
     'send the focus to the richedit, unless told not to
     'restore the scroll position
     SendMessage rtfMain.hwnd, EM_SETSCROLLPOS, 0, m_rtfPos_tP
-    f.flags = GTL_PRECISE
-    Debug.Print "EndVal:" & SendMessage(rtfMain.hwnd, EM_GETTEXTLENGTHEX, VarPtr(f), 0)
+    'f.flags = GTL_PRECISE
+    'Debug.Print "EndVal:" & SendMessage(rtfMain.hwnd, EM_GETTEXTLENGTHEX, VarPtr(f), 0)
 End Sub
 '*** Redrawing ***
 Private Sub LockMain()
@@ -1765,6 +1766,10 @@ On Error GoTo ErrHandler
         ParseVisibleRange
         Exit Sub
     End If
+    If KeyCode = vbKeyInsert And Shift = vbShiftMask Then
+        Paste
+        KeyCode = 0
+    End If
     
     If vSyntaxInfo.bHTML Then
         'we are a HTML file... we always need to know the current status
@@ -1965,7 +1970,7 @@ On Error GoTo ErrHandler
         KeyCode = 0
     End If
     ' undo/redo Code
-    If KeyCode = vbKeyBack Or KeyCode = vbKeyDelete Then
+    If (KeyCode = vbKeyBack Or KeyCode = vbKeyDelete) And Shift = 0 Then
         'add a delete event
         AddUndoDeleteEvent IIf(KeyCode = vbKeyBack, -1, 0), False, DeleteText    'lAmount
         DoEvents
@@ -2451,7 +2456,10 @@ Dim tp As POINTAPI
             'not divisible by 16
             'we are showing half a line...
             If bScrolling Then
-                wParam = MakeDWord(LoWord(wParam), Int(iScrollPos / lPixelsPerLine) * lPixelsPerLine)
+                On Error Resume Next
+                If Abs(Int(iScrollPos / lPixelsPerLine) * lPixelsPerLine) <= 32768 Then '32kb
+                    wParam = MakeDWord(LoWord(wParam), Int(iScrollPos / lPixelsPerLine) * lPixelsPerLine)
+                End If
             Else
                 'hmm...
             End If
@@ -3006,6 +3014,7 @@ Public Sub DrawLines(Optional bOverride As Boolean = False)
     GetClientRect picLines.hwnd, tR
     lEnd = tR.Bottom - tR.Top
     tR.Right = 20
+    
     hBr = CreateSolidBrush(TranslateColor(vbButtonFace))
     FillRect lhDC, tR, hBr
     DeleteObject hBr
@@ -3201,31 +3210,41 @@ Public Sub ParseRange(Optional lStart As Long = 1, Optional lEnd As Long = -1, O
                             lTemp = i + lOffset
                             'reset flag
                             bExit = False
+                            
                             'get the line... it can't span more than that
-                            lTemp = .Find(vbCrLf, lTemp, , rtfNoHighlight) + 1
-                            If lTemp <> 0 Then
-                                sCharTemp = Mid$(sBuffer, i, lTemp - lOffset - i)
+                            If True Then
+                                'find the ending position... the next newline
+                                lTempVal = .Find(vbCrLf, lTemp, , rtfNoHighlight) + 1
+                            Else
+                                'ending position is end of document
+                                lTempVal = lEnd
+                            End If
+                            If lTempVal <> 0 Then
+                                lTemp = i '+ 1
                                 'do we need to check this?
                                 'If Left$(sCharTemp, 1) <> vSyntaxInfo.sFalseQuote Then
                                     'not a string escape
-                                    lTemp = 1
+                                    'lTemp = 1
                                     Do
                                         lTemp = lTemp + 1
                                         'find the next string
-                                        lTemp = InStr(lTemp, sCharTemp, sChar)
-                                        If lTemp = 0 Or vSyntaxInfo.sFalseQuote = "" Then
+                                        lTemp = InStr(lTemp, sBuffer, sChar)
+                                        If lTemp = 0 Or vSyntaxInfo.sFalseQuote = "" Or lTemp > lTempVal Then
+                                            'not found, no false quotes to check for, or we are past the end position
                                             bExit = True
-                                        ElseIf Mid$(sCharTemp, lTemp - 1, 1) <> vSyntaxInfo.sFalseQuote Then
+                                        ElseIf Mid$(sBuffer, lTemp - 1, 1) <> vSyntaxInfo.sFalseQuote Then
+                                            'not a false quote...
                                             bExit = True
                                         End If
-                                        
                                     Loop While bExit = False
                                 'End If
                             End If
-                            If lTemp = 0 Then
+                            If lTempVal = 0 Or lTemp = 0 Then
                                 i = lEnd
+                            ElseIf lTemp > lTempVal Then
+                                i = lTempVal
                             Else
-                                i = lTemp + i - 1
+                                i = lTemp '+ 1 '- 1
                             End If
                             sTmpWord = ""
                             nStartPos = i + 1

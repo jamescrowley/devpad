@@ -46,7 +46,7 @@ Public Property Get Items() As Collection
     Next
     Set Items = cItems
 End Property
-Public Sub AddNewItem(ByVal sNewItem As String)
+Public Sub Add(ByVal sNewItem As String)
     ' this sub adds a new file
     ' to the list
     Dim i As Integer
@@ -60,31 +60,65 @@ Public Sub AddNewItem(ByVal sNewItem As String)
             sCurItem = GetSetting(REG_KEY, m_sSection, m_sKey & i)
             If sCurItem <> Empty Then
                 'Key = sRecent & (i + 1)
-                SaveSetting REG_KEY, m_sSection, m_sKey & (i + 1), sCurItem ' sKey & i + 1
+                SaveSetting REG_KEY, m_sSection, m_sKey & (i + 1), sCurItem
             End If
         Next i
         ' Write the open file to first recent file.
         SaveSetting REG_KEY, m_sSection, m_sKey & "1", sNewItem
+        ' delete any item left over...
+        On Error Resume Next
+        DeleteSetting REG_KEY, m_sSection, m_sKey & m_lMax + 1
     End If
 End Sub
-
-Public Sub MoveItemToTop(ByVal sExistingItem As String)
+Public Sub Remove(Item As Variant)
+    Dim lIndex As Long
+    Dim i As Long
+    Dim sCurItem As String
+    'removes an item...
+    lIndex = ItemIndex(Item)
+    If lIndex <> 0 Then
+        'move item 5 to 4, 4 to 3 etc...
+        For i = lIndex + 1 To m_lMax Step 1
+            sCurItem = GetSetting(REG_KEY, m_sSection, m_sKey & i)
+            If sCurItem <> Empty Then
+                ' save it to the next one down
+                SaveSetting REG_KEY, m_sSection, m_sKey & i - 1, sCurItem
+                DeleteSetting REG_KEY, m_sSection, m_sKey & i
+            End If
+        Next i
+    End If
+End Sub
+Public Property Get ItemIndex(Item As Variant) As Long
+    Dim i As Long
+    If IsNumeric(Item) Then
+        ItemIndex = Int(Item)
+    Else
+        'get the item
+        For i = 1 To m_lMax
+            If GetSetting(REG_KEY, m_sSection, m_sKey & i) = CStr(Item) Then
+                ' Save the value
+                ItemIndex = i
+                Exit For
+            End If
+        Next
+    End If
+End Property
+Public Property Get Item(TheItem As Variant) As String
+    Dim lItemPos As Integer
+    lItemPos = ItemIndex(TheItem)
+    Item = GetSetting(REG_KEY, m_sSection, m_sKey & lItemPos)
+End Property
+Public Sub MoveItemToTop(Item As Variant)
     ' This sub moves the specified file
     ' to the top of the list
     ' from wherever it is
     Dim i As Long
     Dim sCurItem As String
     Dim lItemPos As Integer
-
-    ' Get location of specified file
-    For i = 1 To m_lMax
-        sCurItem = GetSetting(REG_KEY, m_sSection, m_sKey & i)
-        If sCurItem = sExistingItem Then
-            ' Save the value
-            lItemPos = i
-            Exit For
-        End If
-    Next
+    Dim sValue As String
+    lItemPos = ItemIndex(Item)
+    'get its value
+    sValue = GetSetting(REG_KEY, m_sSection, m_sKey & lItemPos)
     ' Copy RecentFile1 to RecentFile2, and so on.
     For i = lItemPos - 1 To 1 Step -1
         'Key = sItem & i
@@ -98,7 +132,7 @@ Public Sub MoveItemToTop(ByVal sExistingItem As String)
         End If
     Next i
     'Key = txtRecent & "1"
-    SaveSetting REG_KEY, m_sSection, m_sKey & "1", sExistingItem
+    SaveSetting REG_KEY, m_sSection, m_sKey & "1", sValue
 End Sub
 
 Public Function OnList(ByVal sItem As String) As Boolean

@@ -517,7 +517,7 @@ On Error GoTo ErrHandler
     ElseIf cmdFind.Caption = LoadResString(1011) Then 'Find
         ' start find.... (first time!)
         ' add the search text to find history...
-        frmMainForm.cFindHistory.AddNewItem txtFind.Text
+        frmMainForm.cFindHistory.Add txtFind.Text
         ' and re-load the find history...
         LoadFindReplaceHistory True
         ' get the first document in the search range
@@ -797,7 +797,7 @@ Private Sub cmdReplace_Click()
                 'if the last item we searched for isn't this one,
                 'add it to the replace history
                 If sLastItem <> txtReplace.Text Then
-                    frmMainForm.cReplaceHistory.AddNewItem txtReplace.Text
+                    frmMainForm.cReplaceHistory.Add txtReplace.Text
                     're-load find/replace history
                     LoadFindReplaceHistory True
                     'save this...
@@ -853,9 +853,9 @@ On Error GoTo ErrHandler
     'abort if no documents are open
     If DocOpen = False Then Exit Sub
     'if we are replacing, add the replace text to the history
-    If bReplace Then frmMainForm.cReplaceHistory.AddNewItem txtReplace.Text
+    If bReplace Then frmMainForm.cReplaceHistory.Add txtReplace.Text
     'add find text to the history
-    frmMainForm.cFindHistory.AddNewItem txtFind.Text
+    frmMainForm.cFindHistory.Add txtFind.Text
     're-load the history
     LoadFindReplaceHistory True
     ' find the first document in range...
@@ -1082,7 +1082,7 @@ End Sub
 Private Sub mnuReplaceHistory_Click(Index As Integer)
     'A recent item has been selected...
     'change the replace text to the one clicked on the menu
-    InsertAuto txtReplace, mnuReplace(Index).Tag
+    InsertAuto txtReplace, mnuReplaceHistory(Index).Tag
 End Sub
 Private Sub mnuLogResults_Click(Index As Integer)
 Dim i As Long

@@ -1,0 +1,188 @@
+;Developers Pad Syntax File
+[Main]
+Version = 1.0
+Name = ActionScript
+FilterName = AS Files
+Filter = *.as
+
+[Options]
+FileCode = 1
+FileType = 0
+IgnoreCase = 0
+AutoCase = 0
+IndentAuto = 1
+IndentDel = 0
+IndentValue = {Tab}
+IndentValueHTML = 
+IndentWithTab = 1
+IndentAfter = {
+OutdentAfter = }
+ColourByLine = 0
+Operators = !~+-&||={}.<>
+String = "
+StringEsc = 
+StringEncoded = \"
+SingleComment = //
+SingleCommentAlt = 
+SingleCommentEsc = \
+CommentStart = /*
+CommentEnd = */
+SyntaxStart = 
+SyntaxEnd = 
+
+[KeywordOptions]
+WordSeperators = \13,\10,\32,\9,\44,.,;,(,)
+CommentColour = &HFF00FF
+KeywordColour = &HFF0000
+KeywordAltColour = &HCE00
+TextColour = &H0
+OperatorColour = &HCE
+HTMLCommentColour = &H8000000F
+HTMLTagColour = &H8000000F
+HTMLExTagColour = &H8000000F
+HTMLScriptColour = &H8000000F
+
+[ProcedureStarts]
+
+Function
+
+
+[Keywords]
+
+add
+and
+Array
+Boolean
+break
+call
+chr
+Color
+continue
+data
+Date
+delete
+do
+duplicateMovieClip
+else
+enterFrame
+escape
+eval
+evaluate
+false
+for
+fscommand
+function
+ge
+getProperty
+getTimer
+getURL
+getVersion
+gotoAndPlay
+gotoAndStop
+if
+ifFrameLoaded
+keyDown
+keyUp
+in
+#include
+Infinity
+int
+isFinite
+isNaN
+it
+Key
+le
+length
+load
+loadMovie
+loadVariables
+Math
+maxscroll
+mbchr
+mblength
+mbord
+mbsubstring
+Mouse
+mouseDown
+mouseUp
+mouseMove
+MovieClip
+NaN
+ne
+new
+newline
+nextFrame
+nextScene
+not
+null
+Number
+onClipEvent
+on
+or
+ord
+parseFloat
+parseInt
+play
+prevFrame
+prevScene
+print
+printAsBitmap
+random
+removeMovieClip
+return
+scroll
+Selection
+set
+setProperty
+Sound
+startDrag
+stop
+stopAllSounds
+stopDrag
+String
+substring
+targetPath
+tellTarget
+this
+toggleHighQuality
+trace
+true
+typeof
+unescape
+unload
+unloadMovie
+updateAfterEvent
+var
+void
+while
+with
+XML
+XMLSocket
+_root
+_parent
+
+[KeywordsAlt]
+
+_alpha
+_highquality
+_totalframes
+_xscale
+_currentframe
+_name
+_url
+_y
+_droptarget
+_quality
+_visible
+_ymouse
+_focusrect
+_rotation
+_width
+_yscale
+_framesloaded
+_soundbuftime
+_x
+_height
+_target
+_xmouse
+

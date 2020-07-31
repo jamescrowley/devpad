@@ -924,12 +924,9 @@ Dim cR As clsRegistry
             cR.SectionKey = "VisualBasic.Project\shell\open\command"
             cR.ValueType = REG_SZ
             cR.ValueKey = ""
-            If cR.Value <> Empty Then
-                sVBPath = Left$(cR.Value, Len(cR.Value) - 5)
-            End If
-            If sVBPath Like Chr$(34) & "*" & Chr$(34) Then
-                sVBPath = Mid$(sVBPath, 2, Len(sVBPath) - 2)
-            End If
+            sVBPath = cR.Value
+            If Right$(sVBPath, 4) = Chr$(34) & "%1" & Chr$(34) Then sVBPath = Trim$(Left$(sVBPath, Len(sVBPath) - 5))
+            sVBPath = StripChar(Chr$(34), sVBPath)
             SaveSetting REG_KEY, "Settings", "VBPath", sVBPath
         Else
             sVBPath = GetSetting(REG_KEY, "Settings", "VBPath", "")

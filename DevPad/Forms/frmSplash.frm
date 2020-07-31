@@ -283,7 +283,7 @@ On Error GoTo ErrHandler
         'restore position of form
         .Top = GetSetting(REG_KEY, "WindowSettings", "MainTop", 1000)
         .Left = GetSetting(REG_KEY, "WindowSettings", "MainLeft", 1000)
-        .Width = GetSetting(REG_KEY, "WindowSettings", "MainWidth", 7000)
+        .Width = GetSetting(REG_KEY, "WindowSettings", "MainWidth", 8000)
         .Height = GetSetting(REG_KEY, "WindowSettings", "MainHeight", 6500)
         .WindowState = GetSetting(REG_KEY, "WindowSettings", "MainState", 0)
         'create the toolbars
@@ -614,9 +614,9 @@ On Error GoTo ErrHandler
                 .AddItem LoadResString(1363), "EditStringDecode", , , iP(6)
                 
             iP(6) = .AddItem(LoadResString(1306), "EditBookmarks", , , iP(5))
-                .AddItem LoadResString(1302), "EditToggleBookmark", , , iP(6), plGetIconIndex("BOOKMARK")
-                .AddItem LoadResString(1303), "EditNextBookmark", , , iP(6), plGetIconIndex("NEXT_BOOKMARK")
-                .AddItem LoadResString(1304), "EditPreviousBookmark", , , iP(6), plGetIconIndex("LAST_BOOKMARK")
+                .AddItem LoadResString(1302) & Chr$(vbKeyTab) & "Ctrl+F2", "EditToggleBookmark", , , iP(6), plGetIconIndex("BOOKMARK")
+                .AddItem LoadResString(1303) & Chr$(vbKeyTab) & "F2", "EditNextBookmark", , , iP(6), plGetIconIndex("NEXT_BOOKMARK")
+                .AddItem LoadResString(1304) & Chr$(vbKeyTab) & "Shift+F2", "EditPreviousBookmark", , , iP(6), plGetIconIndex("LAST_BOOKMARK")
                 .AddItem LoadResString(1305), "EditClearBookmarks", , , iP(6), plGetIconIndex("CLEAR_BOOKMARK")
         '*** View Menu ***
         iP(6) = .MenuIndex("mnuView")

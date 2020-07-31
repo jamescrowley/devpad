@@ -54,7 +54,7 @@ Begin VB.Form frmSearch
       List            =   "frmSearch.frx":0022
       Style           =   2  'Dropdown List
       TabIndex        =   0
-      Top             =   990
+      Top             =   960
       Width           =   1035
    End
    Begin VB.Label lblHelp 
@@ -137,7 +137,7 @@ Begin VB.Form frmSearch
       Index           =   11
       Left            =   165
       TabIndex        =   1
-      Top             =   1020
+      Top             =   990
       Width           =   1335
    End
    Begin VB.Shape Shape2 
@@ -185,7 +185,7 @@ Attribute VB_Exposed = False
 '
 Option Explicit
 
-Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hWnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
+Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
 
 
 

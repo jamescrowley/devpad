@@ -396,10 +396,11 @@ Private Function IDevPadDocument_Save() As Boolean
         Exit Function
     End With
 ErrHandler:
-    cDialog.ErrHandler vbObjectError + 1002, "Error Saving File: " & Err & " " & Error, "Document.SaveFile"
+    cDialog.ErrHandler vbObjectError + 1002, "Error Saving File. Error " & Err & ": " & Error, "Document.SaveFile"
 End Function
 Private Sub IDevPadDocument_SetFocus()
     SetFocus
+    txtText_SelChange
     Form_Activate
 End Sub
 Private Property Get IDevPadDocument_hWnd() As Long

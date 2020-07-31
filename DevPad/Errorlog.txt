@@ -1,0 +1,145 @@
+
+Err -2147220505: Colourizing Error: Never-ending loop detected! Please send the current file to Developers Pad support.
+EditorError
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPadEditor.Editor:ParseRange
+Build         : 0.5.930
+
+Err 75: The file, 'D:\Virtual Hosts\lostmobilephones.org.uk\registervalidation.php', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+D:\Virtual Hosts\lostmobilephones.org.uk\registervalidation.php
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.929
+
+Err 5: Invalid procedure call or argument
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.Menus
+Build         : 0.5.929
+
+Err 91: Object variable or With block variable not set
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.ListWindows
+Build         : 0.5.929
+
+Err 9: Subscript out of range
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.ListWindows
+Build         : 0.5.929
+
+Err 75: The file, 'D:\Virtual Hosts\search.php4', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+D:\Virtual Hosts\search.php4
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.930
+
+Err 0: &More...
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.Menu
+Build         : 0.5.930
+
+Err 75: The file, 'C:\imap.htm', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+C:\imap.htm
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.930
+
+Err 75: The file, 'C:\imap.htm', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+C:\imap.htm
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.930
+
+Err 75: The file, 'C:\imap.htm', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+C:\imap.htm
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.930
+
+Err -2147220488: An error occured when attempting to display the HTML Help file
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.ShowHelp
+Build         : 0.5.930
+
+Err -2147220488: An error occured when attempting to display the HTML Help file
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.ShowHelp
+Build         : 0.5.930
+
+Err -2147220488: An error occured when attempting to display the HTML Help file
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.ShowHelp
+Build         : 0.5.930
+
+Err -2147220488: An error occured when attempting to display the HTML Help file
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.ShowHelp
+Build         : 0.5.930
+
+Err -2147220488: An error occured when attempting to display the HTML Help file
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Main.ShowHelp
+Build         : 0.5.930
+
+Err 75: The file, '\\dellserver\Sarahs Documents\.\bin\global.php', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+\\dellserver\Sarahs Documents\.\bin\global.php
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.929
+
+Err 75: The file, '\\dellserver\Sarahs Documents\.\bin\formfunctions.php', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+\\dellserver\Sarahs Documents\.\bin\formfunctions.php
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.929
+
+Err 75: The file, '\bin\formfunctions.php', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+\bin\formfunctions.php
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.929
+
+Err 75: The file, 'D:\Development\londonpass\mylondon\bin\inc-formfunctions.asp', does not exist, or cannot be accessed.
+The specified Path/file name cannot be accessed or is invalid
+D:\Development\londonpass\mylondon\bin\inc-formfunctions.asp
+Last DLL Error: 0
+Error Source  : 
+Procedure     : DevPad.Documents:LoadFile
+Build         : 0.5.929
+
+Err -2147220502: Error Saving File: 75 The specified Path/file name cannot be accessed or is invalid
+Last DLL Error: 0
+Error Source  : 
+Procedure     : Document.SaveFile
+Build         : 0.5.929
+
+Err 429: Unable to load Add-In: ActiveX component can't create object Please ensure that the add-in is installed correctly, and all the files are correctly registered.
+Last DLL Error: 0
+Error Source  : 
+Procedure     : clsAddIns.Add
+Build         : 0.5.930

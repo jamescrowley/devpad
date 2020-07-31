@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{C4925FC3-1606-11D4-82BB-004005AAE138}#5.2#0"; "VBWIML.OCX"
 Object = "{1F5999A2-1D0B-11D4-82CF-004005AAE138}#6.1#0"; "VBWTBA~1.OCX"
-Object = "{017E002E-D7CC-11D2-8E21-44B10AC10000}#22.0#0"; "VBWGRID.OCX"
+Object = "{017E002E-D7CC-11D2-8E21-44B10AC10000}#22.1#0"; "VBWGRID.OCX"
 Object = "{5C0E11AE-2C8C-4C35-BC7A-D9B469D5DE4D}#6.1#0"; "VBWTRE~1.OCX"
 Begin VB.Form frmProject 
    BorderStyle     =   5  'Sizable ToolWindow
@@ -483,18 +483,18 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 
 Private Sub lvwAllDocs_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single, bDoDefault As Boolean)
-    If Button = vbRightButton And lvwAllDocs.Rows <> 0 Then
+    If Button = vbRightButton And lvwAllDocs.rows <> 0 Then
         bDoDefault = False
         Dim lRow As Long
         Dim lCount As Long
         Dim i As Long
         lvwAllDocs.CellFromPoint X / Screen.TwipsPerPixelX, Y / Screen.TwipsPerPixelY, lRow, 0
-        For i = 1 To lvwAllDocs.Rows
+        For i = 1 To lvwAllDocs.rows
             If lvwAllDocs.CellSelected(i, 1) Then
                 lCount = lCount + 1
             End If
         Next
-        If lCount < 2 And lRow <> 0 Then lvwAllDocs.SelectedRow = lRow
+        If lCount < 2 And lRow <> 0 Then lvwAllDocs.selectedrow = lRow
         BuildPopupMenu 5
         ShowPopup "mnuDocPopup", Me
         DeletePopupMenu 5
@@ -529,7 +529,7 @@ On Error Resume Next
             End If
         Else
            ' frmMainForm.tbhMenu.AllowLock = False
-            sText = GetInsertText(lvwSymbols.SelectedRow, lEntryLen, lCursorPos, lLen)
+            sText = GetInsertText(lvwSymbols.selectedrow, lEntryLen, lCursorPos, lLen)
             With ActiveDoc
                 '.NoEnterFocus = True
                 '.InsertCode sText, True, True
@@ -537,7 +537,7 @@ On Error Resume Next
                 .SelStart = .SelStart - lEntryLen + lCursorPos
                 .SelLength = lLen
                 '.NoEnterFocus = False
-                '.SetFocus
+                .SetFocus
             End With
         End If
     End If
@@ -648,7 +648,7 @@ Private Sub lvwSymbols_MouseDown(Button As Integer, Shift As Integer, X As Singl
             'DisableInsertMenu True
         Else
             sKey = lvwSymbols.RowKey(lRow)
-            lvwSymbols.SelectedRow = lRow
+            lvwSymbols.selectedrow = lRow
             '
             If Left$(sKey, 1) = "&" Then
                 'folder
@@ -759,18 +759,18 @@ End Sub
 
 Public Sub NextEntry()
     With lvwSymbols
-        If .SelectedRow <> .Rows Then
-            .SelectedRow = (.SelectedRow + 1)
-            lvwSymbols_SelectionChange .SelectedRow, .SelectedCol
+        If .selectedrow <> .rows Then
+            .selectedrow = (.selectedrow + 1)
+            lvwSymbols_SelectionChange .selectedrow, .SelectedCol
             PopupMenuHandle 0, "CodePopEditEntry" 'mnuInsert_Click 1
         End If
     End With
 End Sub
 Public Sub LastEntry()
     With lvwSymbols
-        If .SelectedRow <> 1 Then
-            .SelectedRow = (.SelectedRow - 1)
-            lvwSymbols_SelectionChange .SelectedRow, .SelectedCol
+        If .selectedrow <> 1 Then
+            .selectedrow = (.selectedrow - 1)
+            lvwSymbols_SelectionChange .selectedrow, .SelectedCol
             PopupMenuHandle 0, "CodePopEditEntry" 'mnuInsert_Click 1
         End If
     End With
@@ -784,7 +784,7 @@ End Sub
 Private Sub lvwSymbols_SelectionChange(ByVal lRow As Long, ByVal lCol As Long)
     If IsLoaded("frmEntry") Then
         frmEntry.cmdLast.Enabled = Not (lRow = 1)
-        frmEntry.cmdNext.Enabled = Not (lRow = lvwSymbols.Rows)
+        frmEntry.cmdNext.Enabled = Not (lRow = lvwSymbols.rows)
     End If
 End Sub
 
@@ -794,7 +794,7 @@ Public Sub AddEntry(sDescription As String, sValue As String, lPos As Long, lLen
     With lvwSymbols
         ReDim Preserve m_cInserts(1 To m_lInsertsCount + 1)
         m_lInsertsCount = m_lInsertsCount + 1
-        lRow = .Rows + 1
+        lRow = .rows + 1
         .AddRow , m_lInsertsCount  'strValue
         .CellText(lRow, 1) = sDescription
         .CellIcon(lRow, 1) = IndexForKey("FILE_TXT")
@@ -827,7 +827,7 @@ Private Sub ShowCurrentEntry()
     Dim lSel As Long
     Dim sItem As String
     With lvwSymbols
-        lSel = .SelectedRow
+        lSel = .selectedrow
         sItem = .RowKey(lSel)
         If IsNumeric(sItem) Then
             frmEntry.DisplayEntry False, .CellText(lSel, 1), m_cInserts(sItem).sValue, m_cInserts(sItem).lStart, m_cInserts(sItem).lLen, lSel         '.RowKey(.SelectedRow), .RowTag(.SelectedRow), .CellTag(.SelectedRow, 1), .SelectedRow
@@ -894,7 +894,7 @@ Public Sub PopupMenuHandle(lItem As Long, Optional sKey As String = "")
     Case "PrjPopRemoveItem"
         DeleteItem
     Case "CodePopInsert"
-        lvwSymbols_DblClick lvwSymbols.SelectedRow, 1
+        lvwSymbols_DblClick lvwSymbols.selectedrow, 1
     Case "CodePopNewEntry"
         frmEntry.DisplayEntry True, "", "", 0, 0, 0
     Case "CodePopEditEntry"
@@ -906,9 +906,9 @@ Public Sub PopupMenuHandle(lItem As Long, Optional sKey As String = "")
     Case "CodePopNewFolder"
         NewCategory
     Case "CodePopRename"
-        sKey = lvwSymbols.RowKey(lvwSymbols.SelectedRow)
+        sKey = lvwSymbols.RowKey(lvwSymbols.selectedrow)
         If sKey <> "&^UP" Then
-            lRow = lvwSymbols.SelectedRow
+            lRow = lvwSymbols.selectedrow
             sResult = cDialog.InputBox("Please enter a new name", "Rename Item", lvwSymbols.CellText(lRow, 1))
             If sResult <> "" Then
                 If Left$(sKey, 1) = "&" Then 'folder
@@ -923,18 +923,18 @@ Public Sub PopupMenuHandle(lItem As Long, Optional sKey As String = "")
             End If
         End If
     Case "CodePopDelete"
-        sKey = lvwSymbols.RowKey(lvwSymbols.SelectedRow)
+        sKey = lvwSymbols.RowKey(lvwSymbols.selectedrow)
         If sKey <> "&^UP" Then
             If Left$(sKey, 1) = "&" Then
                 DeleteCategory True
             Else
                 '"Are you sure you want to delete the selected item?"
                 If cDialog.ShowYesNo(LoadResString(1274) & LoadResString(1269) & LoadResString(1270), False) = No Then Exit Sub
-                For i = lvwSymbols.RowKey(lvwSymbols.SelectedRow) To m_lInsertsCount - 1 Step 1
+                For i = lvwSymbols.RowKey(lvwSymbols.selectedrow) To m_lInsertsCount - 1 Step 1
                     LSet m_cInserts(i) = m_cInserts(i + 1)
                 Next
                 m_lInsertsCount = m_lInsertsCount - 1
-                lvwSymbols.RemoveRow lvwSymbols.SelectedRow
+                lvwSymbols.RemoveRow lvwSymbols.selectedrow
                 'ChangePath sOldPath
             End If
         End If
@@ -944,7 +944,7 @@ Public Sub PopupMenuHandle(lItem As Long, Optional sKey As String = "")
             bNoUpdate = True
         End If
         
-        For i = 1 To lvwAllDocs.Rows Step 1
+        For i = 1 To lvwAllDocs.rows Step 1
             If lvwAllDocs.CellSelected(i, 1) Then
                 frmMainForm.bCancelClose = False
                 Set frmDoc = cDocuments.ItemByID(lvwAllDocs.CellTag(i, 1))
@@ -1116,12 +1116,12 @@ Dim sProjectRoot As String
             'referenced file is above project folder...
             sFilePath = Replace(sFilePath, sProjectRoot, ".\")
         Else
-            
+            If Right$(sProjectRoot, 1) = "\" Then sProjectRoot = Left$(sProjectRoot, Len(sProjectRoot) - 1)
             Do
                 ' go through the actual location of the project
                 ' each time the current directory does not match
                 ' the actual file's path, substitute a ..\
-                If InStr(1, sFilePath, sProjectRoot) = 0 Then
+                If InStr(1, sFilePath, sProjectRoot & "\") = 0 Then
                     sNewPath = "..\" & sNewPath
                     sProjectRoot = Left$(sProjectRoot, InStrRev(sProjectRoot, "\") - 1)
                     DoEvents
@@ -1572,7 +1572,8 @@ Public Function NewItem(sPath As String, Optional sCaption As String, Optional B
     If sCaption = Empty Then sCaption = GetCaption(sPath)
     sParent = pGetValidParent(sParent)
     AddItem sParent, sCaption, sPath, ShortcutType
-    tvProject.EnsureVisible (tvProject.ItemIndex(sParent & "\" & sCaption))
+    'tvProject.EnsureVisible (tvProject.ItemIndex(sParent & "\" & sCaption))
+    tvProject.ItemExpanded("Project") = True
     NewItem = True
     bChanged = True
 End Function
@@ -1826,7 +1827,7 @@ On Error GoTo ErrHandler
     If sOldPath <> "" And sOldPath <> "\" Or bSelected Then
         Dim sPath As String
         sPath = sOldPath
-        If bSelected Then sPath = sPath & "\" & lvwSymbols.CellText(lvwSymbols.SelectedRow, 1)
+        If bSelected Then sPath = sPath & "\" & lvwSymbols.CellText(lvwSymbols.selectedrow, 1)
         'delete the folder (displays standard explorer prompt)
         DeleteFile App.Path & "\_insert" & sPath
         'unfortunately, we have no way of knowing if it was cancelled or not...
@@ -1962,6 +1963,7 @@ Private Function pAddLiveFolder(sPath As String, sName As String, sParent As Str
     With tvProject
         .ItemPlusMinus(lItem) = True
         .Sorted(lItem) = False
+        .EnsureVisible (lItem)
     End With
     pAddLiveFolder = lItem
     bChanged = True
@@ -2277,7 +2279,7 @@ Dim lIndex As Long
             .SortObject.Clear
             'add the 'up' item
             If sPath <> "" And sPath <> "\" Then
-                lRow = .Rows + 1
+                lRow = .rows + 1
                 .AddRow , "&^UP"
                 .CellText(lRow, 1) = "Up"
                 .CellIcon(lRow, 1) = IndexForKey("FOLDERUP")
@@ -2287,7 +2289,7 @@ Dim lIndex As Long
             'add the items
             lIndex = IndexForKey("FILE_TXT")
             For i = 1 To m_lInsertsCount
-                lRow = .Rows + 1
+                lRow = .rows + 1
                 .AddRow , i  'm_cInserts(i).sName
                 .CellText(lRow, 1) = m_cInserts(i).sName
                 .CellIcon(lRow, 1) = lIndex
@@ -2299,7 +2301,7 @@ Dim lIndex As Long
 '                '.CellIcon(lRow, 1) = IndexForKey("FILE_TXT")
 '            Next
             'm_lInsertsCount = 255
-            If .Rows <> 0 Then
+            If .rows <> 0 Then
                 .CellSelected(1, 1) = True
             End If
             
@@ -2327,7 +2329,7 @@ Private Sub AddFolders(sPath As String)
                 sTemp = StripTerminator(lpFindFileData.cFileName)
                 ' make sure it is not a reference
                 If sTemp <> "." And sTemp <> ".." Then
-                    lRow = lvwSymbols.Rows + 1
+                    lRow = lvwSymbols.rows + 1
                     'add it to the listview
                     lvwSymbols.AddRow , "&" & sTemp
                     lvwSymbols.CellText(lRow, 1) = sTemp

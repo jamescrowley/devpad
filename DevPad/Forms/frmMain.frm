@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{C4925FC3-1606-11D4-82BB-004005AAE138}#5.2#0"; "VBWIML.OCX"
 Object = "{1F5999A2-1D0B-11D4-82CF-004005AAE138}#6.1#0"; "VBWTBA~1.OCX"
-Object = "{C93B2CCD-391A-424C-9BF8-49622ED15ACC}#1.0#0"; "VBWPOP~1.OCX"
+Object = "{C93B2CCD-391A-424C-9BF8-49622ED15ACC}#1.0#0"; "vbwPopMenu.ocx"
 Begin VB.MDIForm frmMainForm 
    AutoShowChildren=   0   'False
    BackColor       =   &H8000000C&
@@ -110,6 +110,14 @@ Begin VB.MDIForm frmMainForm
       TabIndex        =   0
       Top             =   0
       Width           =   7905
+      Begin VB.CommandButton Command1 
+         Caption         =   "Command1"
+         Height          =   630
+         Left            =   3120
+         TabIndex        =   6
+         Top             =   270
+         Width           =   765
+      End
       Begin VB.ComboBox cboFind 
          Appearance      =   0  'Flat
          BeginProperty Font 
@@ -305,13 +313,23 @@ Private Sub FindNext()
         'update the find text
         frmFind.txtFind.Text = cboFind.Text
     End If
-    'simulate Find click on find form...
-    frmFind.cmdFind_Click
-    
+    If cboFind.Text = "" Then
+        frmFind.ShowFind (False)
+    Else
+        'simulate Find click on find form...
+        frmFind.cmdFind_Click
+    End If
 End Sub
 
 
 
+
+Private Sub Command1_Click()
+'    frmOutput.Show
+'    frmOutput.RunCommand ""
+'    frmTaskList.Show
+    frmBrowser.Show
+End Sub
 
 '*** Menu Handling ***
 
@@ -399,12 +417,8 @@ On Error GoTo ErrHandler
     Case "ProjectAddLiveFolder"
         frmProject.AddLiveFolder
     Case "ProjectAddCurrentFile"
-        If ActiveDoc.Saved = False Then
-            cDialog.ErrHandler 0, LoadResString(1242), "Main.Menu" '"File must be saved first"
-        Else
-            'add the current file to the project
-            frmProject.NewItem ActiveDoc.FileName, ActiveDoc.DocumentCaption
-        End If
+        'add the current file to the project
+        frmProject.NewItem ActiveDoc.FileName, ActiveDoc.DocumentCaption
     Case "ProjectAddURL"
         'add a url
         frmProject.AddInternet True
@@ -477,11 +491,11 @@ On Error GoTo ErrHandler
     Case "EditToggleBookmark"
         ActiveDoc.ToggleFlag
     Case "EditNextBookmark"
-        ActiveDoc.NextFlag
+        pNextFlag
     Case "EditPreviousBookmark"
-        ActiveDoc.LastFlag
+        pLastFlag
     Case "EditClearBookmarks"
-        ActiveDoc.ClearFlags
+        pClearFlags
     Case "EditUncomment"
         ActiveDoc.UncommentBlock
     Case "EditComment"
@@ -676,21 +690,25 @@ On Error GoTo ErrHandler
             sValue = ctlPopMenu.Caption(ItemNumber)
             If sValue = LoadResString(1242) Then '"More..."
                 'more... selected. Display open dialog
-                OpenFile , 1
+                OpenFile , 0
             Else
                 'load a new document using the specified template
                 cDocuments.New True, sValue & ".txt" 'LoadNewDoc , sValue & ".txt"
             End If
         ElseIf sKey Like "FileRecentFile*" Then
             ' recent file
-            cDocuments.LoadFile cFileHistory(1).Items(ctlPopMenu.ItemData(ItemNumber))
+            If cDocuments.LoadFile(cFileHistory(1).Item(ctlPopMenu.ItemData(ItemNumber))) Is Nothing Then
+                'failed
+                cFileHistory(1).Remove (ctlPopMenu.ItemData(ItemNumber))
+                LoadFileHistory 1, "FileRecentFile"
+            End If
         ElseIf sKey Like "FileRecentProject*" Then
             ShowProjectWindow
             ' recent project
             ' Call the file open procedure, passing a reference to the selected file name
-            frmProject.OpenProject cFileHistory(2).Items(ctlPopMenu.ItemData(ItemNumber))
+            frmProject.OpenProject cFileHistory(2).Item(ctlPopMenu.ItemData(ItemNumber))
         ElseIf sKey Like "FileRecentWorkspace*" Then
-            cWorkspace.Load cFileHistory(3).Items(ctlPopMenu.ItemData(ItemNumber))
+            cWorkspace.Load cFileHistory(3).Item(ctlPopMenu.ItemData(ItemNumber))
         ElseIf sKey Like "ToolsAddIn*" Then
             'init the Add-in dll
             InitAddIns
@@ -716,17 +734,9 @@ End Sub
 
 Private Sub ctlPopMenu_InitPopupMenu(ParentItemNumber As Long)
 Dim bEnabled As Boolean
+    On Error Resume Next
     'prepares menus before displaying
     Select Case ctlPopMenu.MenuKey(ParentItemNumber)
-    Case "mnuEdit"
-        If DocOpen Then
-            'set the undo/redo items accordingly
-'            With ActiveDoc.txtText
-'                ctlPopMenu.Enabled("EditUndo") = .CanUndo
-'                ctlPopMenu.Enabled("EditRedo") = .CanRedo
-'                ctlPopMenu.Enabled("EditLinkedFile") = (.CursorFile(False) <> "")
-'            End With
-        End If
     Case "mnuView"
         'check the correct items for text wrapping
         If DocOpen Then
@@ -734,6 +744,7 @@ Dim bEnabled As Boolean
             ctlPopMenu.Checked(ctlPopMenu.MenuIndex("ViewNoWordWrap")) = IIf(ActiveDoc.ViewMode = 0, True, False)
             ctlPopMenu.Checked(ctlPopMenu.MenuIndex("ViewWYSIWYG")) = IIf(ActiveDoc.ViewMode = 2, True, False)
         End If
+        ctlPopMenu.Enabled("ViewWYSIWYG") = Not (Printer Is Nothing)
     Case "mnuFile"
         If DocOpen = True Then bEnabled = (ActiveDoc.Saved)
         'set revert menu item
@@ -748,6 +759,10 @@ Dim bEnabled As Boolean
             bEnabled = False
         End If
         ctlPopMenu.Enabled("FileOpenLinkedFile") = bEnabled
+    Case "mnuProject"
+        bEnabled = DocOpen
+        If bEnabled Then bEnabled = (ActiveDoc.Saved)
+        ctlPopMenu.Enabled("ProjectAddCurrentFile") = bEnabled
     Case "mnuWindow"
         'populate the window list
         ListWindows
@@ -784,7 +799,6 @@ Public Sub SetProjectMenu(bEnabled As Boolean)
         
     End With
 End Sub
-
 
 
 '*** Toolbar Handling ***
@@ -1249,7 +1263,7 @@ End Sub
 '*** other operations ***
 Public Sub UpdateFileMenu(ByVal sFileName As String, iType As Integer)
     'adds a file to the history list
-    cFileHistory(iType).AddNewItem sFileName
+    cFileHistory(iType).Add sFileName
     ' Update the list of the most recently opened files in the File menu control array.
     LoadRecentFiles
 End Sub
@@ -1430,10 +1444,14 @@ Public Sub UpdateFlags()
 Dim bEnabled As Boolean
 Dim i As Long
     'see if there are any flags in any docs...
-    For i = 1 To cDocuments.Count Step 1
-        bEnabled = IIf(bEnabled, True, (cDocuments.Item(i).FlagCount <> 0))
-    Next i
-    
+    If GetSetting(REG_KEY, "Settings", "GlobalFlags", 1) = "1" Then
+        For i = 1 To cDocuments.Count Step 1
+            bEnabled = IIf(bEnabled, True, (cDocuments.Item(i).FlagCount <> 0))
+        Next i
+    Else
+        bEnabled = DocOpen
+        If bEnabled = True Then bEnabled = (ActiveDoc.FlagCount <> 0)
+    End If
     EnableTB "NextFlag", bEnabled, 2
     EnableTB "LastFlag", bEnabled, 2
     EnableTB "ClearFlags", bEnabled, 2
@@ -1446,9 +1464,10 @@ Dim bResult As Boolean
     nIndex = cDocuments.DocumentIndex(ActiveDoc.DocID)
     nOrigIndex = nIndex
     'try the current doc...
-    bResult = cDocuments.Item(nIndex).NextFlag
-    If bResult = False Then
-        'no good in current doc...
+    'allow looping if the flags are not global
+    bResult = cDocuments.Item(nIndex).NextFlag(GetSetting(REG_KEY, "Settings", "GlobalFlags", 1) <> "1")
+    If bResult = False And GetSetting(REG_KEY, "Settings", "GlobalFlags", 1) = "1" Then
+        'no good in current doc... and we are allowing global flags...
         Do
             'get the next document
             nIndex = cDocuments.NextIndex(nIndex)
@@ -1464,9 +1483,8 @@ Dim bResult As Boolean
             End If
         Loop
         'if still no match, then run NextFlag allowing looping
-        If nIndex = nOrigIndex Then cDocuments.Item(nIndex).NextFlag True
+        cDocuments.Item(nIndex).NextFlag True
     End If
-    
 End Sub
 Private Sub pLastFlag()
 Dim nIndex As Long
@@ -1476,9 +1494,10 @@ Dim bResult As Boolean
     nIndex = cDocuments.DocumentIndex(ActiveDoc.DocID)
     nOrigIndex = nIndex
     'try the current doc...
-    bResult = cDocuments.Item(nIndex).PreviousFlag
-    If bResult = False Then
-        'no good in current doc...
+    'allow looping if the flags are not global
+    bResult = cDocuments.Item(nIndex).PreviousFlag(GetSetting(REG_KEY, "Settings", "GlobalFlags", 1) <> "1")
+    If bResult = False And GetSetting(REG_KEY, "Settings", "GlobalFlags", 1) = "1" Then
+        'no good in current doc, and we allow global flags
         Do
             'get the next document
             nIndex = cDocuments.PreviousIndex(nIndex)
@@ -1499,10 +1518,15 @@ Dim bResult As Boolean
 End Sub
 Private Sub pClearFlags()
 Dim i As Long
-    'clear flags from all docs
-    For i = 1 To cDocuments.Count Step 1
-        cDocuments.Item(i).ClearFlags
-    Next i
+    If GetSetting(REG_KEY, "Settings", "GlobalFlags", 1) = "1" Then
+        'clear flags from all docs
+        For i = 1 To cDocuments.Count Step 1
+            cDocuments.Item(i).ClearFlags
+        Next i
+    Else
+        'only current doc
+        If DocOpen Then ActiveDoc.ClearFlags
+    End If
 End Sub
 Public Property Get FileHistoryItems() As Collection
     Set FileHistoryItems = cFileHistory(1).Items

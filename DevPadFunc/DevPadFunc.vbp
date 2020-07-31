@@ -1,6 +1,6 @@
 Type=OleDll
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\..\..\WINNT\system32\STDOLE2.TLB#OLE Automation
-Reference=*\G{0E2D86D3-1445-11D4-82B5-004005AAE138}#1.0#0#..\COMPON~1\VBWSUB~1.DLL#VB Web Subclassing DLL
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\..\..\WINNT\System32\stdole2.tlb#OLE Automation
+Reference=*\G{0E2D86D3-1445-11D4-82B5-004005AAE138}#1.0#0#..\..\..\..\..\..\..\..\..\Documents and Settings\Administrator\My Documents\Development\Visual Basic\Regular\DevPad\Current Release\Components\vbwSubClass.dll#VB Web Subclassing DLL
 Reference=*\G{B96BCBE1-F886-11D0-9C63-A06801C10627}#1.2#0#..\..\..\..\..\..\..\..\..\Documents and Settings\Administrator\My Documents\Development\Visual Basic\Regular\DevPad\Current Release\Components\vbwTreeView300\ISHF_Ex.tlb#IShellFolder Extended Type Library v1.2
 Class=GCommonDialog; Classes\clsGCommonDialog.cls
 Class=clsHookDlg; Classes\clsHookDlg.cls

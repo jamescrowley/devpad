@@ -23,6 +23,14 @@ Begin VB.Form frmClassSpy
    ScaleWidth      =   5100
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton cmdsmart 
+      Caption         =   "smart"
+      Height          =   330
+      Left            =   1635
+      TabIndex        =   24
+      Top             =   1245
+      Width           =   1365
+   End
    Begin VB.Timer tmrCheck 
       Enabled         =   0   'False
       Interval        =   10
@@ -445,9 +453,9 @@ Attribute VB_Exposed = False
 ' Developers Pad
 '
 Option Explicit
-Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hWnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
+Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
 
-Private Declare Function SetWindowPos Lib "user32" (ByVal hWnd As Long, ByVal hWndInsertAfter As Long, ByVal X As Long, Y, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
+Private Declare Function SetWindowPos Lib "user32" (ByVal hwnd As Long, ByVal hWndInsertAfter As Long, ByVal X As Long, Y, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) As Long
 'Public cParent As clsClassSpy
 Private Const HWND_TOPMOST = -1
 Private Const HWND_NOTOPMOST = -2
@@ -463,7 +471,7 @@ Private Const TOPMOST_FLAGS = SWP_NOMOVE Or SWP_NOSIZE
 Private Const GWL_EXSTYLE = (-20)
 Private Const GWL_STYLE = (-16)
 
-Private Declare Function GetParent Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function GetParent Lib "user32" (ByVal hwnd As Long) As Long
 Private Const WS_BORDER = &H800000
 Private Const WS_CAPTION = &HC00000
 Private Const WS_CHILD = &H40000000
@@ -489,8 +497,8 @@ Private Const WS_VSCROLL = &H200000
 Private Declare Function GetActiveWindow Lib "user32" () As Long
 Private Declare Function FindWindow Lib "user32" Alias "FindWindowA" (ByVal lpClassName As String, ByVal lpWindowName As String) As Long
 Private Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal hWnd1 As Long, ByVal hWnd2 As Long, ByVal lpsz1 As String, ByVal lpsz2 As String) As Long
-Private Declare Function MoveWindow Lib "user32" (ByVal hWnd As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal bRepaint As Long) As Long
-Private Declare Function SetCapture Lib "user32" (ByVal hWnd As Long) As Long
+Private Declare Function MoveWindow Lib "user32" (ByVal hwnd As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal bRepaint As Long) As Long
+Private Declare Function SetCapture Lib "user32" (ByVal hwnd As Long) As Long
 Private Declare Function ReleaseCapture Lib "user32" () As Long
 
 Private Type RECT
@@ -504,8 +512,8 @@ Private Type POINTAPI
         X As Long
         Y As Long
 End Type
-Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" (ByVal hWnd As Long, ByVal nIndex As Long) As Long
-Private Declare Function ShowWindow Lib "user32" (ByVal hWnd As Long, ByVal nCmdShow As Long) As Long
+Private Declare Function GetWindowLong Lib "user32" Alias "GetWindowLongA" (ByVal hwnd As Long, ByVal nIndex As Long) As Long
+Private Declare Function ShowWindow Lib "user32" (ByVal hwnd As Long, ByVal nCmdShow As Long) As Long
 Private Const SW_SHOW = 5
 Private Const SW_HIDE = 0
 
@@ -514,7 +522,7 @@ Private Const WM_GETTEXT = &HD
 Private Declare Function GetCursorPos Lib "user32" (lpPoint As POINTAPI) As Long
 Private bOnTop As Boolean
 
-Private Declare Function GetWindowText Lib "user32" Alias "GetWindowTextA" (ByVal hWnd As Long, ByVal lpString As String, ByVal cch As Long) As Long
+Private Declare Function GetWindowText Lib "user32" Alias "GetWindowTextA" (ByVal hwnd As Long, ByVal lpString As String, ByVal cch As Long) As Long
 
 
 Private Declare Function GetModuleFileName Lib "kernel32" Alias "GetModuleFileNameA" (ByVal hModule As Long, ByVal lpFileName As String, ByVal nSize As Long) As Long
@@ -523,18 +531,18 @@ Private Declare Function GetModuleFileName Lib "kernel32" Alias "GetModuleFileNa
 Private Declare Function WindowFromPointXY Lib "user32" Alias "WindowFromPoint" (ByVal xPoint As Long, ByVal yPoint As Long) As Long
 
 
-Private Declare Function GetClassName& Lib "user32" Alias "GetClassNameA" (ByVal hWnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long)
+Private Declare Function GetClassName& Lib "user32" Alias "GetClassNameA" (ByVal hwnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long)
 
 
-Private Declare Function GetWindowWord Lib "user32" (ByVal hWnd As Long, ByVal nIndex As Long) As Integer
+Private Declare Function GetWindowWord Lib "user32" (ByVal hwnd As Long, ByVal nIndex As Long) As Integer
 
 
 
-Private Declare Function SetWindowText Lib "user32" Alias "SetWindowTextA" (ByVal hWnd As Long, ByVal lpString As String) As Long
-Private Declare Function lSetFocus Lib "user32" Alias "SetFocus" (ByVal hWnd As Long) As Long
+Private Declare Function SetWindowText Lib "user32" Alias "SetWindowTextA" (ByVal hwnd As Long, ByVal lpString As String) As Long
+Private Declare Function lSetFocus Lib "user32" Alias "SetFocus" (ByVal hwnd As Long) As Long
 Private Declare Function GetDesktopWindow Lib "user32" () As Long
 Private Declare Function SetParent Lib "user32" (ByVal hWndChild As Long, ByVal hWndNewParent As Long) As Long
-Private Declare Function GetWindowRect Lib "user32" (ByVal hWnd As Long, lpRect As RECT) As Long
+Private Declare Function GetWindowRect Lib "user32" (ByVal hwnd As Long, lpRect As RECT) As Long
 'Private Declare Function SetRectEmpty Lib "user32" (lpRect As RECT) As Long
 'Private Declare Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
 'Private Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc As Long) As Long
@@ -542,7 +550,7 @@ Private Declare Function GetWindowRect Lib "user32" (ByVal hWnd As Long, lpRect 
 'Private Const WM_MOUSEMOVE = &H200
 'Private Const MK_LBUTTON = &H1
 
-Private Declare Function GetClientRect Lib "user32" (ByVal hWnd As Long, lpRect As RECT) As Long
+Private Declare Function GetClientRect Lib "user32" (ByVal hwnd As Long, lpRect As RECT) As Long
 Private lOldLeft As Long
 Private bDragging As Boolean
 Private hWndLast As Long
@@ -600,6 +608,10 @@ Private Sub cmdParent_Click()
     End If
 End Sub
 
+Private Sub cmdsmart_Click()
+    frmSmartUpdate.Show vbModal
+End Sub
+
 Private Sub Form_Deactivate()
    ' Debug.Print "deactivate"
 End Sub
@@ -632,21 +644,21 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 
 Private Sub lblHelp_Click()
-    ShowHTMLHelpTopic 2, hWnd
+    ShowHTMLHelpTopic 2, hwnd
 End Sub
 
 Private Sub picStart_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     If Button = vbLeftButton And bDragging = False Then
         bDragging = True
-        SetCapture picStart.hWnd
+        SetCapture picStart.hwnd
         Set picStart.MouseIcon = imgCur.MouseIcon
         picStart.MousePointer = vbCustom
         ShowWindow cFunc.ApphWnd, SW_HIDE
         lOldLeft = Left
         Left = -10000
        ' Height = 0
-        SetParent picSpy.hWnd, 0&
-        MakeTopMost picSpy.hWnd
+        SetParent picSpy.hwnd, 0&
+        MakeTopMost picSpy.hwnd
         picSpy.Visible = True
         tmrCheck.Enabled = True
       '  picStart_MouseMove vbLeftButton, -1, -1, -1
@@ -664,7 +676,7 @@ Private Sub picStart_MouseMove(Button As Integer, Shift As Integer, X As Single,
         hWndOver = WindowFromPointXY(tP.X, tP.Y)
         
         GetClientRect GetDesktopWindow(), tScreen
-        GetWindowRect picSpy.hWnd, tR
+        GetWindowRect picSpy.hwnd, tR
      '   GetWindowRect 0&, tScreen
         tP.X = tP.X + 20
         tP.Y = tP.Y - 10 '+ 40
@@ -677,7 +689,7 @@ Private Sub picStart_MouseMove(Button As Integer, Shift As Integer, X As Single,
             tP.Y = 0
         End If
 '        SetFocus
-        MoveWindow picSpy.hWnd, tP.X, tP.Y, tR.Right - tR.Left, tR.Bottom - tR.Top, True
+        MoveWindow picSpy.hwnd, tP.X, tP.Y, tR.Right - tR.Left, tR.Bottom - tR.Top, True
         
 
 
@@ -692,8 +704,8 @@ Private Sub picStart_MouseUp(Button As Integer, Shift As Integer, X As Single, Y
         ReleaseCapture
         picStart.MousePointer = vbDefault
         'frmSpy.Hide
-        SetParent picSpy.hWnd, hWnd
-        MakeNormal picSpy.hWnd
+        SetParent picSpy.hwnd, hwnd
+        MakeNormal picSpy.hwnd
         'MakeNormal picSpy.hwnd
         picSpy.Visible = False
         'cFunc.frmMain.WindowState = vbNormal
@@ -715,11 +727,11 @@ End Sub
 'Private Sub tmrUpdate_Timer()
 '    WindowSPY
 'End Sub
-Function GetWndStyle(hWnd) As String
+Function GetWndStyle(hwnd) As String
     Dim af As Long, s As String
 
     ' Get normal style
-    af = GetWindowLong(hWnd, GWL_STYLE)
+    af = GetWindowLong(hwnd, GWL_STYLE)
     
     If af And WS_BORDER Then s = s & "Border "
     If af And WS_CAPTION Then s = s & "Caption "
@@ -738,7 +750,7 @@ Function GetWndStyle(hWnd) As String
     If af And WS_VSCROLL Then s = s & "VScroll "
 
     ' Get extended style
-    af = GetWindowLong(hWnd, GWL_EXSTYLE)
+    af = GetWindowLong(hwnd, GWL_EXSTYLE)
     If af And WS_EX_DLGMODALFRAME Then s = s & "DlgModalFrame "
     If af And WS_EX_NOPARENTNOTIFY Then s = s & "NoParentNotify "
     If af And WS_EX_TOPMOST Then
@@ -751,13 +763,13 @@ Function GetWndStyle(hWnd) As String
     GetWndStyle = s
 
 End Function
-Public Sub MakeNormal(hWnd As Long)
-    SetWindowPos hWnd, HWND_NOTOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS
+Public Sub MakeNormal(hwnd As Long)
+    SetWindowPos hwnd, HWND_NOTOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS
 End Sub
-Public Sub MakeTopMost(hWnd As Long)
-    SetWindowPos hWnd, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS
+Public Sub MakeTopMost(hwnd As Long)
+    SetWindowPos hwnd, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS
 End Sub
 
 Private Sub tmrCheck_Timer()
-    If GetActiveWindow <> hWnd Then picStart_MouseUp 0, -1, -1, -1
+    If GetActiveWindow <> hwnd Then picStart_MouseUp 0, -1, -1, -1
 End Sub

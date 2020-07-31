@@ -103,6 +103,7 @@ Private Function IDevPadDocuments_LoadFile(ByVal FileName As String, Optional By
                 cDialog.ErrHandler Err, Error, "DevPad.Documents:LoadFile", FileName
                 'close the form
                 If bExisting = False Then frmForm.Close
+                Set frmForm = Nothing
             End If
             On Error GoTo ErrHandler
             .ClearFlags

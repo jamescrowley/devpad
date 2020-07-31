@@ -19,7 +19,7 @@ IndentAfter =
 OutdentAfter = 
 ColourByLine = 1
 Operators = ;()+&|=!
-String = "
+String = "'
 StringEsc = 
 StringEncoded = 
 SingleComment = --
